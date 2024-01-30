@@ -1,22 +1,3 @@
-export type OSBarcodeScanOptions = { 
-  hint: OSBarcodeTypeHint,
-  scanInstructions: string,
-  scanButton: string,
-  scanText: string, // has no mapping to web
-  cameraDirection: OSBarcodeCameraDirection // map to facingMode in web -- 1: environment, 2: user
-  native: {
-    android: {
-      scanningLibrary: OSBarcodeAndroidScanningLibrary,
-    }
-    scanOrientation: OSBarcodeNativeScanOrientation,
-  },
-  web: {
-    showCameraSelection: boolean,
-    scannerFPS: number
-    scanOrientation: OSBarcodeWebScanOrientation
-  }
-}
-
 export enum OSBarcodeCameraDirection {
   BACK = 1,
   FRONT = 2
@@ -56,6 +37,25 @@ export enum OSBarcodeTypeHint {
 export enum OSBarcodeAndroidScanningLibrary {
   ZXING = 'zxing',
 	MLKIT = 'mlkit'
+}
+
+export type OSBarcodeScanOptions = { 
+  hint: OSBarcodeTypeHint,
+  scanInstructions: string,
+  scanButton: string,
+  scanText: string, // has no mapping to web
+  cameraDirection: OSBarcodeCameraDirection // map to facingMode in web -- 1: environment, 2: user
+  native: {
+    android: {
+      scanningLibrary: OSBarcodeAndroidScanningLibrary,
+    }
+    scanOrientation: OSBarcodeNativeScanOrientation,
+  },
+  web: {
+    showCameraSelection: boolean,
+    scannerFPS: number
+    scanOrientation: OSBarcodeWebScanOrientation
+  }
 }
 
 export type OSBarcodeScanResult = { ScanResult: string };

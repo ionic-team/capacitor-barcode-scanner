@@ -2,8 +2,7 @@ import { WebPlugin } from '@capacitor/core';
 
 import type { 
   OSBarcodePlugin, 
-  OSBarcodeScanOptions, 
-  OSBarcodeScanOptionsLegacy, 
+  OSBarcodeScanOptions,
   OSBarcodeScanResult 
 } from './definitions';
 
@@ -13,9 +12,5 @@ export class OSBarcodeWeb extends WebPlugin implements OSBarcodePlugin {
     const str = 'ECHO: ' + JSON.stringify(options);
     console.log(str);
     return { ScanResult: str };
-  }
-
-  async scan(options: OSBarcodeScanOptionsLegacy): Promise<OSBarcodeScanResult> {
-    return await this.scanBarcode({ ...options, androidScanningLibrary: 'ZXing' });
   }
 }

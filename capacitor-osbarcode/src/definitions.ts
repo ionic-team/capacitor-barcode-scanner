@@ -4,16 +4,13 @@ export type OSBarcodeScanOptions = {
   scanButton: string,
   scanText: string, // has no mapping to web
   cameraDirection: OSBarcodeCameraDirection // map to facingMode in web -- 1: environment, 2: user
-  native: {
-    android: {
-      scanningLibrary: OSBarcodeAndroidScanningLibrary,
-    }
-    scanOrientation: OSBarcodeNativeScanOrientation,
+  scanOrientation: OSBarcodeScanOrientation,
+  android: {
+    scanningLibrary: OSBarcodeAndroidScanningLibrary,
   },
   web: {
     showCameraSelection: boolean,
     scannerFPS: number
-    scanOrientation: OSBarcodeWebScanOrientation
   }
 }
 
@@ -22,15 +19,11 @@ export enum OSBarcodeCameraDirection {
   FRONT = 2
 }
 
-export enum OSBarcodeNativeScanOrientation {
+export enum OSBarcodeScanOrientation {
   PORTRAIT = 1,
-  LANDSCAPE = 2
-}
-
-enum OSBarcodeWebScanOrientationOptions {
+  LANDSCAPE = 2,
   ADAPTIVE = 3
 }
-export type OSBarcodeWebScanOrientation =  OSBarcodeNativeScanOrientation | OSBarcodeWebScanOrientationOptions;
 
 export enum OSBarcodeTypeHint {
   QR_CODE=  0,

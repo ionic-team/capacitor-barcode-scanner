@@ -1,7 +1,7 @@
 export type OSBarcodeScanOptions = { 
   hint: OSBarcodeTypeHint,
   scanInstructions: string,
-  scanButton: string,
+  scanButton: boolean,
   scanText: string, // has no mapping to web
   cameraDirection: OSBarcodeCameraDirection // map to facingMode in web -- 1: environment, 2: user
   scanOrientation: OSBarcodeScanOrientation,

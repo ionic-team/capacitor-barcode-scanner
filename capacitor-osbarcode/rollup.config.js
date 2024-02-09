@@ -7,6 +7,7 @@ export default {
       name: 'capacitorOSBarcode',
       globals: {
         '@capacitor/core': 'capacitorExports',
+        'html5-qrcode': 'html5Qrcode',
       },
       sourcemap: true,
       inlineDynamicImports: true,
@@ -18,5 +19,5 @@ export default {
       inlineDynamicImports: true,
     },
   ],
-  external: ['@capacitor/core'],
+  external: ['@capacitor/core', 'html5-qrcode'],
 };

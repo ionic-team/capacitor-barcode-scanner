@@ -1,4 +1,7 @@
 {
   "name": "root",
-  "private": true
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r --filter=!root run build && cp ./capacitor-osbarcode/README.md ./README.md"
+  }
 }

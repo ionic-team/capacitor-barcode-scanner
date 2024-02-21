@@ -68,7 +68,6 @@ export type OSBarcodeScanOptions = {
   web?: {
     showCameraSelection?: boolean,
     scannerFPS?: number
-    scannerElement: HTMLElement | null
   }
 }
 

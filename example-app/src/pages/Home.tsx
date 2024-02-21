@@ -6,21 +6,20 @@ import { OSBarcode, OSBarcodeTypeHint, OSBarcodeCameraDirection, OSBarcodeScanOr
 const Home: React.FC = () => {
   const [scannerResult, setScannerResult] = useState<string>('No Data...');
 
-  const openScanner = async () => {
+  const scanBarcode = async () => {
     const result = await OSBarcode.scanBarcode({
       hint: OSBarcodeTypeHint.ALL,
-      scanInstructions: 'Please scan a barcode',
-      scanButton: 'Scan', // TODO: Not implemented yet in the web implementation
-      scanText: 'SCAN TEXT', // TODO: Not implemented yet in the web implementation
+      scanInstructions: 'Hold your device over the barcode to scan.',
+      scanButton: true, // TODO: Not implemented yet in the web implementation
+      scanText: 'Scanning...', // TODO: Not implemented yet in the web implementation
       cameraDirection: OSBarcodeCameraDirection.BACK, 
-      scanOrientation: OSBarcodeScanOrientation.PORTRAIT, // TODO: Not implemented yet in the web implementation
+      scanOrientation: OSBarcodeScanOrientation.ADAPTIVE, // TODO: Not implemented yet in the web implementation
       android: {
         scanningLibrary: OSBarcodeAndroidScanningLibrary.MLKIT,
       },
       web: {
         showCameraSelection: false, // TODO: Not implemented yet in the web implementation
-        scannerFPS: 30,
-        scannerElement: document.getElementById('scanContainer')
+        scannerFPS: 30
       }
     });
     setScannerResult(result.ScanResult);
@@ -30,7 +29,7 @@ const Home: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Home</IonTitle>
+          <IonTitle>Barcode Scanner</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -41,7 +40,7 @@ const Home: React.FC = () => {
         </IonHeader>
         <div style={{marginTop: '5px'}}></div>
         <IonInput value={scannerResult} label="Scanner Result" labelPlacement="floating" readonly={true} fill="outline" placeholder="No Data..."></IonInput>
-        <IonButton onClick={openScanner}>Scan</IonButton>
+        <IonButton onClick={scanBarcode}>Scan</IonButton>
       </IonContent>
     </IonPage>
   );

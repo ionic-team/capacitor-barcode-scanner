@@ -9,6 +9,10 @@ importers:
   .: {}
 
   capacitor-osbarcode:
+    dependencies:
+      html5-qrcode:
+        specifier: 2.3.8
+        version: 2.3.8
     devDependencies:
       '@capacitor/android':
         specifier: ^5.6.0
@@ -58,6 +62,9 @@ importers:
       '@capacitor/app':
         specifier: 5.0.7
         version: 5.0.7(@capacitor/core@5.6.0)
+      '@capacitor/barcode':
+        specifier: workspace:*
+        version: link:../capacitor-osbarcode
       '@capacitor/core':
         specifier: 5.6.0
         version: 5.6.0
@@ -4406,6 +4413,10 @@ packages:
     dependencies:
       whatwg-encoding: 2.0.0
     dev: true
+
+  /html5-qrcode@2.3.8:
+    resolution: {integrity: sha512-jsr4vafJhwoLVEDW3n1KvPnCCXWaQfRng0/EEYk1vNcQGcG/htAdhJX0be8YyqMoSz7+hZvOZSTAepsabiuhiQ==}
+    dev: false
 
   /http-proxy-agent@5.0.0:
     resolution: {integrity: sha512-n2hY8YdoRE1i7r6M0w9DIw5GgZN0G25P8zLCRQ8rjXtTU3vsNFBI/vWK/UIeE6g5MUUz6avwAPXmL6Fy9D/90w==}

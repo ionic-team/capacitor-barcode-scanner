@@ -3,19 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		03FC29A292ACC40490383A1F /* Pods_Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2A61DA5A1F2DD4F959604D /* Pods_Plugin.framework */; };
 		20C0B05DCFC8E3958A738AF2 /* Pods_PluginTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6753A823D3815DB436415E3 /* Pods_PluginTests.framework */; };
-		2F98D68224C9AAE500613A4C /* OSBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98D68124C9AAE400613A4C /* OSBarcode.swift */; };
 		50ADFF92201F53D600D50D53 /* Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50ADFF88201F53D600D50D53 /* Plugin.framework */; };
 		50ADFF97201F53D600D50D53 /* OSBarcodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ADFF96201F53D600D50D53 /* OSBarcodeTests.swift */; };
 		50ADFF99201F53D600D50D53 /* OSBarcodePlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 50ADFF8B201F53D600D50D53 /* OSBarcodePlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50ADFFA42020D75100D50D53 /* Capacitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50ADFFA52020D75100D50D53 /* Capacitor.framework */; };
 		50ADFFA82020EE4F00D50D53 /* OSBarcodePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 50ADFFA72020EE4F00D50D53 /* OSBarcodePlugin.m */; };
 		50E1A94820377CB70090CE1A /* OSBarcodePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E1A94720377CB70090CE1A /* OSBarcodePlugin.swift */; };
+		A35A516D2B743B8A00396B38 /* OSBarcodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A516C2B743B8A00396B38 /* OSBarcodeError.swift */; };
+		A35A516E2B743B8A00396B38 /* OSBarcodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A516C2B743B8A00396B38 /* OSBarcodeError.swift */; };
+		A35A51702B743BB100396B38 /* OSBarcodeScanArgumentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A516F2B743BB100396B38 /* OSBarcodeScanArgumentsModel.swift */; };
+		A35A51712B743BB100396B38 /* OSBarcodeScanArgumentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A516F2B743BB100396B38 /* OSBarcodeScanArgumentsModel.swift */; };
+		A35A51732B743CAA00396B38 /* OSBARCArgumentMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A51722B743CAA00396B38 /* OSBARCArgumentMappable.swift */; };
+		A35A51742B743CAA00396B38 /* OSBARCArgumentMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A51722B743CAA00396B38 /* OSBARCArgumentMappable.swift */; };
+		A35A517F2B74449700396B38 /* OSBarcodeLib.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A35A51752B74414E00396B38 /* OSBarcodeLib.xcframework */; };
+		A35A51802B74449700396B38 /* OSBarcodeLib.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A35A51752B74414E00396B38 /* OSBarcodeLib.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,8 +35,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A35A51812B74449700396B38 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A35A51802B74449700396B38 /* OSBarcodeLib.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		2F98D68124C9AAE400613A4C /* OSBarcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSBarcode.swift; sourceTree = "<group>"; };
 		3B2A61DA5A1F2DD4F959604D /* Pods_Plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50ADFF88201F53D600D50D53 /* Plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50ADFF8B201F53D600D50D53 /* OSBarcodePlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSBarcodePlugin.h; sourceTree = "<group>"; };
@@ -43,6 +63,10 @@
 		5E23F77F099397094342571A /* Pods-Plugin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plugin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Plugin/Pods-Plugin.debug.xcconfig"; sourceTree = "<group>"; };
 		91781294A431A2A7CC6EB714 /* Pods-Plugin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plugin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Plugin/Pods-Plugin.release.xcconfig"; sourceTree = "<group>"; };
 		96ED1B6440D6672E406C8D19 /* Pods-PluginTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PluginTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PluginTests/Pods-PluginTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A35A516C2B743B8A00396B38 /* OSBarcodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSBarcodeError.swift; sourceTree = "<group>"; };
+		A35A516F2B743BB100396B38 /* OSBarcodeScanArgumentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSBarcodeScanArgumentsModel.swift; sourceTree = "<group>"; };
+		A35A51722B743CAA00396B38 /* OSBARCArgumentMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSBARCArgumentMappable.swift; sourceTree = "<group>"; };
+		A35A51752B74414E00396B38 /* OSBarcodeLib.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OSBarcodeLib.xcframework; path = Pods/OSBarcodeLib.xcframework; sourceTree = "<group>"; };
 		F65BB2953ECE002E1EF3E424 /* Pods-PluginTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PluginTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PluginTests/Pods-PluginTests.release.xcconfig"; sourceTree = "<group>"; };
 		F6753A823D3815DB436415E3 /* Pods_PluginTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PluginTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -52,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A35A517F2B74449700396B38 /* OSBarcodeLib.xcframework in Frameworks */,
 				50ADFFA42020D75100D50D53 /* Capacitor.framework in Frameworks */,
 				03FC29A292ACC40490383A1F /* Pods_Plugin.framework in Frameworks */,
 			);
@@ -92,11 +117,13 @@
 		50ADFF8A201F53D600D50D53 /* Plugin */ = {
 			isa = PBXGroup;
 			children = (
+				A35A51722B743CAA00396B38 /* OSBARCArgumentMappable.swift */,
 				50E1A94720377CB70090CE1A /* OSBarcodePlugin.swift */,
-				2F98D68124C9AAE400613A4C /* OSBarcode.swift */,
 				50ADFF8B201F53D600D50D53 /* OSBarcodePlugin.h */,
 				50ADFFA72020EE4F00D50D53 /* OSBarcodePlugin.m */,
 				50ADFF8C201F53D600D50D53 /* Info.plist */,
+				A35A516C2B743B8A00396B38 /* OSBarcodeError.swift */,
+				A35A516F2B743BB100396B38 /* OSBarcodeScanArgumentsModel.swift */,
 			);
 			path = Plugin;
 			sourceTree = "<group>";
@@ -124,6 +151,7 @@
 		A797B9EFA3DCEFEA1FBB66A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A35A51752B74414E00396B38 /* OSBarcodeLib.xcframework */,
 				50ADFFA52020D75100D50D53 /* Capacitor.framework */,
 				3B2A61DA5A1F2DD4F959604D /* Pods_Plugin.framework */,
 				F6753A823D3815DB436415E3 /* Pods_PluginTests.framework */,
@@ -154,6 +182,7 @@
 				50ADFF84201F53D600D50D53 /* Frameworks */,
 				50ADFF85201F53D600D50D53 /* Headers */,
 				50ADFF86201F53D600D50D53 /* Resources */,
+				A35A51812B74449700396B38 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -306,9 +335,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A35A51732B743CAA00396B38 /* OSBARCArgumentMappable.swift in Sources */,
 				50E1A94820377CB70090CE1A /* OSBarcodePlugin.swift in Sources */,
-				2F98D68224C9AAE500613A4C /* OSBarcode.swift in Sources */,
 				50ADFFA82020EE4F00D50D53 /* OSBarcodePlugin.m in Sources */,
+				A35A51702B743BB100396B38 /* OSBarcodeScanArgumentsModel.swift in Sources */,
+				A35A516D2B743B8A00396B38 /* OSBarcodeError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +348,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				50ADFF97201F53D600D50D53 /* OSBarcodeTests.swift in Sources */,
+				A35A516E2B743B8A00396B38 /* OSBarcodeError.swift in Sources */,
+				A35A51742B743CAA00396B38 /* OSBARCArgumentMappable.swift in Sources */,
+				A35A51712B743BB100396B38 /* OSBarcodeScanArgumentsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,7 +483,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -470,7 +505,12 @@
 				INFOPLIST_FILE = Plugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)\n$(FRAMEWORK_SEARCH_PATHS)\n$(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS)\n$(FRAMEWORK_SEARCH_PATHS)\n$(FRAMEWORK_SEARCH_PATHS)",
+				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.getcapacitor.Plugin;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -496,7 +536,12 @@
 				INFOPLIST_FILE = Plugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS)",
+				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.getcapacitor.Plugin;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -513,7 +558,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PluginTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.getcapacitor.PluginTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -527,7 +576,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PluginTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.getcapacitor.PluginTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

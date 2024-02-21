@@ -88,7 +88,7 @@ export class OSBarcodeWeb extends WebPlugin implements OSBarcodePlugin {
       const param = {
         facingMode: options.cameraDirection === 1 ? 'environment' : 'user',
         hasScannerButton: false,
-        buttonText: options.scanButton ? options.scanButton : '',
+        scanButton: options.scanButton === undefined ? false : options.scanButton,
         showScanLine: false,
         scanInstructions: options.scanInstructions
           ? options.scanInstructions

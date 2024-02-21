@@ -58,7 +58,7 @@ export type OSBarcodeScanResult = { ScanResult: string };
 export type OSBarcodeScanOptions = { 
   hint: OSBarcodeTypeHint,
   scanInstructions?: string,
-  scanButton?: string,
+  scanButton?: boolean,
   scanText?: string,
   cameraDirection?: OSBarcodeCameraDirection,
   scanOrientation?: OSBarcodeScanOrientation,

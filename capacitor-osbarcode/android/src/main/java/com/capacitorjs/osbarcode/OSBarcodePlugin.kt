@@ -57,21 +57,17 @@ class OSBarcodePlugin : Plugin() {
 
     @ActivityCallback
     fun handleScanResult(call: PluginCall, result: ActivityResult) {
-        if (call.isKeptAlive) {
-            barcodeController.handleActivityResult(
-                    SCAN_REQUEST_CODE, result.resultCode, result.data,
-                    onSuccess = { scanResult ->
-                        val ret = JSObject()
-                        ret.put("result", scanResult)
-                        call.resolve(ret)
-                    },
-                    onError = { error ->
-                        call.reject(error.description, formatErrorCode(error.code))
-                    }
-            )
-        } else {
-            call.reject("No saved plugin call found for the scan result.")
-        }
+        barcodeController.handleActivityResult(
+                SCAN_REQUEST_CODE, result.resultCode, result.data,
+                onSuccess = { scanResult ->
+                    val ret = JSObject()
+                    ret.put("result", scanResult)
+                    call.resolve(ret)
+                },
+                onError = { error ->
+                    call.reject(error.description, formatErrorCode(error.code))
+                }
+        )
     }
 
     private fun formatErrorCode(code: Int): String {

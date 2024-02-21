@@ -42,7 +42,12 @@ scanBarcode(options: OSBarcodeScanOptions) => any
 
 #### OSBarcodeScanOptions
 
-<code>{ hint: <a href="#osbarcodetypehint">OSBarcodeTypeHint</a>, scanInstructions: string, scanButton: boolean, scanText: string, // has no mapping to web cameraDirection: <a href="#osbarcodecameradirection">OSBarcodeCameraDirection</a> // map to facingMode in web -- 1: environment, 2: user scanOrientation: <a href="#osbarcodescanorientation">OSBarcodeScanOrientation</a>, android: { scanningLibrary: <a href="#osbarcodeandroidscanninglibrary">OSBarcodeAndroidScanningLibrary</a>, }, web: { showCameraSelection: boolean, scannerFPS: number } }</code>
+<code>{ hint: <a href="#osbarcodetypehint">OSBarcodeTypeHint</a>, scanInstructions?: string, scanButton?: string, scanText?: string, cameraDirection?: <a href="#osbarcodecameradirection">OSBarcodeCameraDirection</a>, scanOrientation?: <a href="#osbarcodescanorientation">OSBarcodeScanOrientation</a>, android?: { scanningLibrary?: <a href="#osbarcodeandroidscanninglibrary">OSBarcodeAndroidScanningLibrary</a>, }, web?: { showCameraSelection?: boolean, scannerFPS?: number scannerElement: HTMLElement | null } }</code>
+
+
+#### OSBarcodeTypeHint
+
+<code><a href="#html5qrcodesupportedformats">Html5QrcodeSupportedFormats</a> | <a href="#osbarcodetypehintalloption">OSBarcodeTypeHintALLOption</a></code>
 
 
 #### OSBarcodeScanResult
@@ -53,7 +58,7 @@ scanBarcode(options: OSBarcodeScanOptions) => any
 ### Enums
 
 
-#### OSBarcodeTypeHint
+#### Html5QrcodeSupportedFormats
 
 | Members                 | Value           |
 | ----------------------- | --------------- |
@@ -74,7 +79,13 @@ scanBarcode(options: OSBarcodeScanOptions) => any
 | **`UPC_A`**             | <code>14</code> |
 | **`UPC_E`**             | <code>15</code> |
 | **`UPC_EAN_EXTENSION`** | <code>16</code> |
-| **`ALL`**               | <code>17</code> |
+
+
+#### OSBarcodeTypeHintALLOption
+
+| Members   | Value           |
+| --------- | --------------- |
+| **`ALL`** | <code>17</code> |
 
 
 #### OSBarcodeCameraDirection

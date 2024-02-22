@@ -61,7 +61,7 @@ class OSBarcodePlugin : Plugin() {
                 SCAN_REQUEST_CODE, result.resultCode, result.data,
                 onSuccess = { scanResult ->
                     val ret = JSObject()
-                    ret.put("result", scanResult)
+                    ret.put("ScanResult", scanResult)
                     call.resolve(ret)
                 },
                 onError = { error ->

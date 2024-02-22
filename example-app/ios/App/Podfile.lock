@@ -3,7 +3,7 @@ PODS:
     - CapacitorCordova
   - CapacitorApp (5.0.7):
     - Capacitor
-  - CapacitorBarcode (0.0.1):
+  - CapacitorBarcode (1.0.0-alpha.0):
     - Capacitor
   - CapacitorCordova (5.7.0)
   - CapacitorHaptics (5.0.7):
@@ -16,7 +16,7 @@ PODS:
 DEPENDENCIES:
   - "Capacitor (from `../../../node_modules/.pnpm/@capacitor+ios@5.7.0_@capacitor+core@5.7.0/node_modules/@capacitor/ios`)"
   - "CapacitorApp (from `../../../node_modules/.pnpm/@capacitor+app@5.0.7_@capacitor+core@5.7.0/node_modules/@capacitor/app`)"
-  - "CapacitorBarcode (from `../../../node_modules/.pnpm/file+capacitor-osbarcode_@capacitor+core@5.7.0/node_modules/@capacitor/barcode`)"
+  - CapacitorBarcode (from `../../../capacitor-osbarcode`)
   - "CapacitorCordova (from `../../../node_modules/.pnpm/@capacitor+ios@5.7.0_@capacitor+core@5.7.0/node_modules/@capacitor/ios`)"
   - "CapacitorHaptics (from `../../../node_modules/.pnpm/@capacitor+haptics@5.0.7_@capacitor+core@5.7.0/node_modules/@capacitor/haptics`)"
   - "CapacitorKeyboard (from `../../../node_modules/.pnpm/@capacitor+keyboard@5.0.8_@capacitor+core@5.7.0/node_modules/@capacitor/keyboard`)"
@@ -28,7 +28,7 @@ EXTERNAL SOURCES:
   CapacitorApp:
     :path: "../../../node_modules/.pnpm/@capacitor+app@5.0.7_@capacitor+core@5.7.0/node_modules/@capacitor/app"
   CapacitorBarcode:
-    :path: "../../../node_modules/.pnpm/file+capacitor-osbarcode_@capacitor+core@5.7.0/node_modules/@capacitor/barcode"
+    :path: "../../../capacitor-osbarcode"
   CapacitorCordova:
     :path: "../../../node_modules/.pnpm/@capacitor+ios@5.7.0_@capacitor+core@5.7.0/node_modules/@capacitor/ios"
   CapacitorHaptics:
@@ -41,12 +41,12 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Capacitor: fc155ee2ee45a2093d716f13cf5aa5a865e2d85a
   CapacitorApp: 17fecd0e6cb23feafac7eb0939417389038b0979
-  CapacitorBarcode: 500d2c442148d05d87003efb98c5f6d246b0ee6c
+  CapacitorBarcode: 9c05706b271924e809f9ff7556be79b61afacca1
   CapacitorCordova: e825fce1a2e14e4b5730641c7e098dccf74397b7
   CapacitorHaptics: 7c7c206f0c96a628fed073830c96d28c4b2e772e
   CapacitorKeyboard: aec619a578235c6ce279075009a2689c2cf5c42c
   CapacitorStatusBar: f390fbb49b82ffb754ea4b3cf71dc8b048baf3e7
 
-PODFILE CHECKSUM: 3d2678ff107257bacc550a269884cfa632998dcc
+PODFILE CHECKSUM: b0ec7785cfdf423edc21f3232e90cfa007f815bc
 
 COCOAPODS: 1.14.3

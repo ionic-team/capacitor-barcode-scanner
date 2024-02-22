@@ -25,12 +25,7 @@ public class OSBarcodePlugin: CAPPlugin {
             return
         }
         
-        guard let argumentsModel = call.getObject("arguments") else {
-            call.reject("Scan input arguments issue")
-            return
-        }
-        
-        guard let argumentsData = try? JSONSerialization.data(withJSONObject: argumentsModel),
+        guard let argumentsData = try? JSONSerialization.data(withJSONObject: call.jsObjectRepresentation),
               let scanArguments = try? JSONDecoder().decode(OSBarcodeScanArgumentsModel.self, from: argumentsData) else {
             call.reject("Error decoding scan arguments")
             return
@@ -39,7 +34,7 @@ public class OSBarcodePlugin: CAPPlugin {
         Task {
             do {
                 let scannedBarcode = try await manager.scanBarcode(with: scanArguments.scanInstructions, scanArguments.scanButtonText, scanArguments.cameraDirection, and: scanArguments.scanOrientation)
-                call.resolve(["value": scannedBarcode])
+                call.resolve(["ScanResult": scannedBarcode])
             } catch OSBARCManagerError.cameraAccessDenied {
                 call.reject("Camera access denied")
             } catch OSBARCManagerError.scanningCancelled {

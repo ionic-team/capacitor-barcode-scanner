@@ -11,7 +11,7 @@ const Home: React.FC = () => {
       hint: OSBarcodeTypeHint.ALL,
       scanInstructions: 'Hold your device over the barcode to scan.',
       scanButton: true, // TODO: Not implemented yet in the web implementation
-      scanText: 'Scanning...', // TODO: Not implemented yet in the web implementation
+      scanText: 'Press To Start Scanning', // TODO: Not implemented yet in the web implementation
       cameraDirection: OSBarcodeCameraDirection.BACK, 
       scanOrientation: OSBarcodeScanOrientation.ADAPTIVE, // TODO: Not implemented yet in the web implementation
       android: {

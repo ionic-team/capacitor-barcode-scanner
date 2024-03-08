@@ -1,0 +1,78 @@
+{
+  "name": "@capacitor/barcode-scanner",
+  "version": "1.0.0-alpha.0",
+  "description": "Capacitor plugin using Outsystems Barcode libs",
+  "main": "dist/plugin.cjs.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "unpkg": "dist/plugin.js",
+  "files": [
+    "android/src/main/",
+    "android/build.gradle",
+    "dist/",
+    "ios/Plugin/",
+    "CapacitorBarcodeScanner.podspec"
+  ],
+  "author": "OutSystems",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+github.com/ionic-team/capacitor-barcode-scanner.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ionic-team/capacitor-barcode-scanner/issues"
+  },
+  "keywords": [
+    "capacitor",
+    "plugin",
+    "native"
+  ],
+  "scripts": {
+    "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
+    "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin -destination generic/platform=iOS && cd ..",
+    "verify:android": "cd android && ./gradlew clean build test && cd ..",
+    "verify:web": "npm run build",
+    "lint": "npm run eslint && npm run prettier -- --check && npm run swiftlint -- lint",
+    "fmt": "npm run eslint -- --fix && npm run prettier -- --write && npm run swiftlint -- --fix --format",
+    "eslint": "eslint . --ext ts",
+    "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
+    "swiftlint": "node-swiftlint",
+    "docgen": "docgen --api CapacitorBarcodeScannerPlugin --output-readme README.md --output-json dist/docs.json",
+    "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.js",
+    "clean": "rimraf ./dist",
+    "watch": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "html5-qrcode": "2.3.8"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^5.6.0",
+    "@capacitor/core": "^5.6.0",
+    "@capacitor/docgen": "^0.2.2",
+    "@capacitor/ios": "^5.6.0",
+    "@ionic/swiftlint-config": "^1.1.2",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^8.8.0",
+    "prettier": "^2.8.8",
+    "prettier-plugin-java": "~2.1.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.78.1",
+    "swiftlint": "^1.0.2",
+    "typescript": "^5.4.2"
+  },
+  "peerDependencies": {
+    "@capacitor/core": "^5.6.0"
+  },
+  "swiftlint": "@ionic/swiftlint-config",
+  "capacitor": {
+    "ios": {
+      "src": "ios"
+    },
+    "android": {
+      "src": "android"
+    }
+  }
+}

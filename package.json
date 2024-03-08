@@ -2,6 +2,24 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "build": "pnpm -r --filter=!root run build && cp ./capacitor-osbarcode/README.md ./README.md"
-  }
+    "prepare": "husky",
+    "lint": "pnpm lerna run lint",
+    "fmt": "pnpm lerna run fmt",
+    "build": "pnpm lerna run build && yes | cp ./plugin/README.md ./README.md",
+    "publish:dev": "lerna publish prerelease --conventional-commits --conventional-prerelease --preid dev-$(date +\"%Y%m%dT%H%M%S\") --dist-tag dev --force-publish --no-verify-access --no-changelog --no-git-tag-version --no-push --yes",
+    "publish:rc": "lerna publish prerelease --conventional-commits --conventional-prerelease --preid rc --dist-tag next --force-publish --no-verify-access --yes",
+    "publish:release-from-prerelease": "lerna publish --conventional-graduate --conventional-commits --dist-tag latest --force-publish --no-verify-access --yes",
+    "publish:latest": "lerna publish --conventional-commits --dist-tag latest --force-publish --no-verify-access --yes"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.25",
+    "husky": "^9.0.1",
+    "lerna": "^8.1.2",
+    "typescript": "^5.4.2"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=8"
+  },
+  "dependencies": {}
 }

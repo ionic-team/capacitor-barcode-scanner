@@ -1,0 +1,83 @@
+name: "Release to NPM"
+
+on: 
+  workflow_call:
+    inputs:
+      create-dev-release:
+        required: false
+        type: boolean
+        default: false
+      create-rc-release:
+        required: false
+        type: boolean
+        default: false
+    secrets:
+      CAP_GH_RELEASE_TOKEN:
+        required: true
+      NPM_TOKEN:
+        required: true
+
+jobs:
+  build:
+    runs-on: 'ubuntu-22.04'
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
+
+      - name: 'Setup Tools'
+        uses: ./.github/actions/setup-tools
+
+      - name: 'Check Current Release Type'
+        shell: bash
+        run: |
+          RELEASE_TYPE="$([[ "$(git describe --abbrev=0 --tags)" =~ ^[0-9]{1,}[\.][0-9]{1,}[\.][0-9]{1,}[-]((beta)|(rc)|(alpha))[\.][0-9]{1,}$ ]] && echo "prerelease" || echo "release")"
+          echo "releasetype=$RELEASE_TYPE" >> $GITHUB_ENV
+      
+      - name: "NPM Identity"
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+          npm whoami
+          
+      - name: "Git Config"
+        run: |
+          git config user.name "Github Workflow (on behalf of ${{ github.actor }})"
+          git config user.email "users.noreply.github.com"  
+      
+      - name: 'Dev Release'
+        if: inputs.create-dev-release
+        shell: bash
+        env: 
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
+        run: |
+          pnpm run publish:dev
+      
+      - name: 'RC Release'
+        if: "!inputs.create-dev-release && inputs.create-rc-release"
+        shell: bash
+        env: 
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
+        run: |
+          pnpm run publish:rc
+      
+      - name: 'Release from PreRelease'
+        if: ${{ !inputs.create-dev-release && !inputs.create-rc-release && env.releasetype == 'prerelease' }}
+        shell: bash
+        env: 
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
+        run: |
+          pnpm run publish:release-from-prerelease
+
+      - name: 'Release from Release'
+        if: ${{ !inputs.create-dev-release && !inputs.create-rc-release && env.releasetype == 'release' }}
+        shell: bash
+        env: 
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
+        run: |
+          pnpm run publish:latest

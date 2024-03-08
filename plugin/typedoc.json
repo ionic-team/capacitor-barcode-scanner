@@ -1,0 +1,10 @@
+{
+  "excludeExternals": true,
+  "disableSources": true,
+  "out": "api",
+  "theme": "markdown",
+  "name": "Barcode Scanner",
+  "hideBreadcrumbs": true,
+  "hideGenerator": true,
+  "plugin": ["typedoc-plugin-markdown"]
+}

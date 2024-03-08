@@ -1,3 +1,3 @@
 packages:
-  - 'capacitor-osbarcode'
+  - 'plugin'
   - 'example-app'

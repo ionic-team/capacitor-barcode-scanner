@@ -1,21 +1,21 @@
 import { IonButton, IonContent, IonHeader, IonInput, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './Home.css';
 import { useState } from 'react';
-import { OSBarcode, OSBarcodeTypeHint, OSBarcodeCameraDirection, OSBarcodeScanOrientation, OSBarcodeAndroidScanningLibrary } from '@capacitor/barcode';
+import { CapacitorBarcodeScanner, CapacitorBarcodeScannerTypeHint, CapacitorBarcodeScannerCameraDirection, CapacitorBarcodeScannerScanOrientation, CapacitorBarcodeScannerAndroidScanningLibrary } from '@capacitor/barcode-scanner';
 
 const Home: React.FC = () => {
   const [scannerResult, setScannerResult] = useState<string>('No Data...');
 
   const scanBarcode = async () => {
-    const result = await OSBarcode.scanBarcode({
-      hint: OSBarcodeTypeHint.ALL,
+    const result = await CapacitorBarcodeScanner.scanBarcode({
+      hint: CapacitorBarcodeScannerTypeHint.ALL,
       scanInstructions: 'Hold your device over the barcode to scan.',
       scanButton: true, // TODO: Not implemented yet in the web implementation
       scanText: 'Press To Start Scanning', // TODO: Not implemented yet in the web implementation
-      cameraDirection: OSBarcodeCameraDirection.BACK, 
-      scanOrientation: OSBarcodeScanOrientation.ADAPTIVE, // TODO: Not implemented yet in the web implementation
+      cameraDirection: CapacitorBarcodeScannerCameraDirection.BACK, 
+      scanOrientation: CapacitorBarcodeScannerScanOrientation.ADAPTIVE, // TODO: Not implemented yet in the web implementation
       android: {
-        scanningLibrary: OSBarcodeAndroidScanningLibrary.MLKIT,
+        scanningLibrary: CapacitorBarcodeScannerAndroidScanningLibrary.MLKIT,
       },
       web: {
         showCameraSelection: false, // TODO: Not implemented yet in the web implementation

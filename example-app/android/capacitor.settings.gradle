@@ -14,5 +14,5 @@ project(':capacitor-keyboard').projectDir = new File('../../node_modules/.pnpm/@
 include ':capacitor-status-bar'
 project(':capacitor-status-bar').projectDir = new File('../../node_modules/.pnpm/@capacitor+status-bar@5.0.7_@capacitor+core@5.7.0/node_modules/@capacitor/status-bar/android')
 
-include ':capacitor-barcode'
-project(':capacitor-barcode').projectDir = new File('../../capacitor-osbarcode/android')
+include ':capacitor-barcode-scanner'
+project(':capacitor-barcode-scanner').projectDir = new File('../../plugin/android')

@@ -1,0 +1,57 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name OSBarcodeLib
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import Combine
+import DeveloperToolsSupport
+import Foundation
+import Swift
+import SwiftUI
+import UIKit
+import Vision
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct OSBARCManagerFactory {
+  public static func createManager(with rootViewController: UIKit.UIViewController) -> any OSBarcodeLib.OSBARCManagerProtocol
+}
+public enum OSBARCManagerError : Swift.Error {
+  case cameraAccessDenied
+  case scanningCancelled
+  public static func == (a: OSBarcodeLib.OSBARCManagerError, b: OSBarcodeLib.OSBARCManagerError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum OSBARCCameraModel {
+  case back
+  case front
+  public static func == (a: OSBarcodeLib.OSBARCCameraModel, b: OSBarcodeLib.OSBARCCameraModel) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol OSBARCManagerProtocol {
+  #if compiler(>=5.3) && $AsyncAwait
+  func scanBarcode(with instructionsText: Swift.String, _ buttonText: Swift.String?, _ cameraModel: OSBarcodeLib.OSBARCCameraModel, and orientationModel: OSBarcodeLib.OSBARCOrientationModel) async throws -> Swift.String
+  #endif
+}
+public enum OSBARCOrientationModel {
+  case adaptive
+  case landscape
+  case portrait
+  public static func == (a: OSBarcodeLib.OSBARCOrientationModel, b: OSBarcodeLib.OSBARCOrientationModel) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension OSBarcodeLib.OSBARCManagerError : Swift.Equatable {}
+extension OSBarcodeLib.OSBARCManagerError : Swift.Hashable {}
+extension OSBarcodeLib.OSBARCCameraModel : Swift.Equatable {}
+extension OSBarcodeLib.OSBARCCameraModel : Swift.Hashable {}
+extension OSBarcodeLib.OSBARCOrientationModel : Swift.Equatable {}
+extension OSBarcodeLib.OSBARCOrientationModel : Swift.Hashable {}

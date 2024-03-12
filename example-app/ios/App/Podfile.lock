@@ -41,7 +41,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Capacitor: fc155ee2ee45a2093d716f13cf5aa5a865e2d85a
   CapacitorApp: 17fecd0e6cb23feafac7eb0939417389038b0979
-  CapacitorBarcodeScanner: a96f1c8c27163d241db12837e7c342ef9e7f217f
+  CapacitorBarcodeScanner: e278ac16d24a971dc54ff5d206186f3df4433100
   CapacitorCordova: e825fce1a2e14e4b5730641c7e098dccf74397b7
   CapacitorHaptics: 7c7c206f0c96a628fed073830c96d28c4b2e772e
   CapacitorKeyboard: aec619a578235c6ce279075009a2689c2cf5c42c

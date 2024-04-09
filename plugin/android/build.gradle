@@ -8,6 +8,17 @@ ext {
 buildscript {
     ext.kotlin_version = project.hasProperty("kotlin_version") ? rootProject.ext.kotlin_version : '1.9.22'
     repositories {
+        maven {
+            url 'https://pkgs.dev.azure.com/OutSystemsRD/9e79bc5b-69b2-4476-9ca5-d67594972a52/_packaging/PublicArtifactRepository/maven/v1'
+            name 'Azure'
+            credentials {
+                username = "optional"
+                password = ""
+            }
+            content {
+                includeGroup "com.github.outsystems"
+            }
+        }
         google()
         mavenCentral()
         flatDir {
@@ -49,13 +60,24 @@ android {
 }
 
 repositories {
+    maven {
+        url 'https://pkgs.dev.azure.com/OutSystemsRD/9e79bc5b-69b2-4476-9ca5-d67594972a52/_packaging/PublicArtifactRepository/maven/v1'
+        name 'Azure'
+        credentials {
+            username = "optional"
+            password = ""
+        }
+        content {
+            includeGroup "com.github.outsystems"
+        }
+    }
     google()
     mavenCentral()
 }
 
-
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'])
+    // implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'])
+    implementation "com.github.outsystems:osbarcode-android:1.0.1@aar"
     implementation project(':capacitor-android')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     implementation 'androidx.activity:activity-ktx:1.8.2'

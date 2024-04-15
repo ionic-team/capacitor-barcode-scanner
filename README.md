@@ -9,6 +9,32 @@ npm install @capacitor/barcode-scanner
 npx cap sync
 ```
 
+#### Android
+
+You will need to modify the `allprojects > repositories` section in your `android/build.gradle` file to include the Outsystems repository. Your `android/build.gradle` file should look similar to this after adding the repository.
+
+```gradle
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url 'https://pkgs.dev.azure.com/OutSystemsRD/9e79bc5b-69b2-4476-9ca5-d67594972a52/_packaging/PublicArtifactRepository/maven/v1'
+            name 'Azure'
+            credentials {
+                username = "optional"
+                password = ""
+            }
+            content {
+                includeGroup "com.github.outsystems"
+            }
+        }
+    }
+}
+```
+
+---
+
 ## API
 
 <docgen-index>

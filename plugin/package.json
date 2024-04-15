@@ -28,6 +28,9 @@
     "plugin",
     "native"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
     "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin -destination generic/platform=iOS && cd ..",

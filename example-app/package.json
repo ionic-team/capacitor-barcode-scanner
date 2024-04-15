@@ -12,14 +12,14 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@capacitor/android": "next",
-    "@capacitor/app": "next",
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/app": "^6.0.0",
     "@capacitor/barcode-scanner": "workspace:*",
-    "@capacitor/core": "next",
-    "@capacitor/haptics": "next",
-    "@capacitor/ios": "next",
-    "@capacitor/keyboard": "next",
-    "@capacitor/status-bar": "next",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/haptics": "^6.0.0",
+    "@capacitor/ios": "^6.0.0",
+    "@capacitor/keyboard": "^6.0.0",
+    "@capacitor/status-bar": "^6.0.0",
     "@ionic/react": "^7.0.0",
     "@ionic/react-router": "^7.0.0",
     "@types/react-router": "^5.1.20",
@@ -31,7 +31,7 @@
     "react-router-dom": "^5.3.4"
   },
   "devDependencies": {
-    "@capacitor/cli": "next",
+    "@capacitor/cli": "^6.0.0",
     "@testing-library/dom": ">=7.21.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",

@@ -1,28 +1,28 @@
 PODS:
-  - Capacitor (6.0.0-rc.2):
+  - Capacitor (6.0.0):
     - CapacitorCordova
-  - CapacitorApp (6.0.0-rc.1):
+  - CapacitorApp (6.0.0):
     - Capacitor
   - CapacitorBarcodeScanner (1.0.0-alpha.0):
     - Capacitor
-    - OSBarcodeLib (~> 1.0.0)
-  - CapacitorCordova (6.0.0-rc.2)
-  - CapacitorHaptics (6.0.0-rc.1):
+    - OSBarcodeLib (~> 1.1.0)
+  - CapacitorCordova (6.0.0)
+  - CapacitorHaptics (6.0.0):
     - Capacitor
-  - CapacitorKeyboard (6.0.0-rc.1):
+  - CapacitorKeyboard (6.0.0):
     - Capacitor
-  - CapacitorStatusBar (6.0.0-rc.1):
+  - CapacitorStatusBar (6.0.0):
     - Capacitor
-  - OSBarcodeLib (1.0.0)
+  - OSBarcodeLib (1.1.0)
 
 DEPENDENCIES:
-  - "Capacitor (from `../../../node_modules/.pnpm/@capacitor+ios@6.0.0-rc.2_@capacitor+core@6.0.0-rc.2/node_modules/@capacitor/ios`)"
-  - "CapacitorApp (from `../../../node_modules/.pnpm/@capacitor+app@6.0.0-rc.1_@capacitor+core@6.0.0-rc.2/node_modules/@capacitor/app`)"
+  - "Capacitor (from `../../../node_modules/.pnpm/@capacitor+ios@6.0.0_@capacitor+core@6.0.0/node_modules/@capacitor/ios`)"
+  - "CapacitorApp (from `../../../node_modules/.pnpm/@capacitor+app@6.0.0_@capacitor+core@6.0.0/node_modules/@capacitor/app`)"
   - CapacitorBarcodeScanner (from `../../../plugin`)
-  - "CapacitorCordova (from `../../../node_modules/.pnpm/@capacitor+ios@6.0.0-rc.2_@capacitor+core@6.0.0-rc.2/node_modules/@capacitor/ios`)"
-  - "CapacitorHaptics (from `../../../node_modules/.pnpm/@capacitor+haptics@6.0.0-rc.1_@capacitor+core@6.0.0-rc.2/node_modules/@capacitor/haptics`)"
-  - "CapacitorKeyboard (from `../../../node_modules/.pnpm/@capacitor+keyboard@6.0.0-rc.1_@capacitor+core@6.0.0-rc.2/node_modules/@capacitor/keyboard`)"
-  - "CapacitorStatusBar (from `../../../node_modules/.pnpm/@capacitor+status-bar@6.0.0-rc.1_@capacitor+core@6.0.0-rc.2/node_modules/@capacitor/status-bar`)"
+  - "CapacitorCordova (from `../../../node_modules/.pnpm/@capacitor+ios@6.0.0_@capacitor+core@6.0.0/node_modules/@capacitor/ios`)"
+  - "CapacitorHaptics (from `../../../node_modules/.pnpm/@capacitor+haptics@6.0.0_@capacitor+core@6.0.0/node_modules/@capacitor/haptics`)"
+  - "CapacitorKeyboard (from `../../../node_modules/.pnpm/@capacitor+keyboard@6.0.0_@capacitor+core@6.0.0/node_modules/@capacitor/keyboard`)"
+  - "CapacitorStatusBar (from `../../../node_modules/.pnpm/@capacitor+status-bar@6.0.0_@capacitor+core@6.0.0/node_modules/@capacitor/status-bar`)"
 
 SPEC REPOS:
   trunk:
@@ -30,30 +30,30 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Capacitor:
-    :path: "../../../node_modules/.pnpm/@capacitor+ios@6.0.0-rc.2_@capacitor+core@6.0.0-rc.2/node_modules/@capacitor/ios"
+    :path: "../../../node_modules/.pnpm/@capacitor+ios@6.0.0_@capacitor+core@6.0.0/node_modules/@capacitor/ios"
   CapacitorApp:
-    :path: "../../../node_modules/.pnpm/@capacitor+app@6.0.0-rc.1_@capacitor+core@6.0.0-rc.2/node_modules/@capacitor/app"
+    :path: "../../../node_modules/.pnpm/@capacitor+app@6.0.0_@capacitor+core@6.0.0/node_modules/@capacitor/app"
   CapacitorBarcodeScanner:
     :path: "../../../plugin"
   CapacitorCordova:
-    :path: "../../../node_modules/.pnpm/@capacitor+ios@6.0.0-rc.2_@capacitor+core@6.0.0-rc.2/node_modules/@capacitor/ios"
+    :path: "../../../node_modules/.pnpm/@capacitor+ios@6.0.0_@capacitor+core@6.0.0/node_modules/@capacitor/ios"
   CapacitorHaptics:
-    :path: "../../../node_modules/.pnpm/@capacitor+haptics@6.0.0-rc.1_@capacitor+core@6.0.0-rc.2/node_modules/@capacitor/haptics"
+    :path: "../../../node_modules/.pnpm/@capacitor+haptics@6.0.0_@capacitor+core@6.0.0/node_modules/@capacitor/haptics"
   CapacitorKeyboard:
-    :path: "../../../node_modules/.pnpm/@capacitor+keyboard@6.0.0-rc.1_@capacitor+core@6.0.0-rc.2/node_modules/@capacitor/keyboard"
+    :path: "../../../node_modules/.pnpm/@capacitor+keyboard@6.0.0_@capacitor+core@6.0.0/node_modules/@capacitor/keyboard"
   CapacitorStatusBar:
-    :path: "../../../node_modules/.pnpm/@capacitor+status-bar@6.0.0-rc.1_@capacitor+core@6.0.0-rc.2/node_modules/@capacitor/status-bar"
+    :path: "../../../node_modules/.pnpm/@capacitor+status-bar@6.0.0_@capacitor+core@6.0.0/node_modules/@capacitor/status-bar"
 
 SPEC CHECKSUMS:
-  Capacitor: 616838064c270088c3c51e0bb2f57259c09f3d55
-  CapacitorApp: 649eca1980ddb28d43177bc78b252123e243b848
-  CapacitorBarcodeScanner: 2c52ec265dcf61c15f471f61bbbbdfd85269112d
-  CapacitorCordova: 62056f853503fb402c3bd9ea9b93b30f23d1c1ce
-  CapacitorHaptics: b004f0eb5b1cbef124889ccf745679f3aa9568ef
-  CapacitorKeyboard: 683563ad6b13c1a46bfc710d49b4621570feef48
-  CapacitorStatusBar: 31febfff4331f2e800847abdac79d64f04eb4206
-  OSBarcodeLib: e5075922166a0140d7e22218efe904a4b359f056
+  Capacitor: 559d073c4ca6c27f8e7002c807eea94c3ba435a9
+  CapacitorApp: 9d53aec7101f7b030a950c5bdc4df8612576b279
+  CapacitorBarcodeScanner: 80444aa11d911dac09a6af454560db735de81ee6
+  CapacitorCordova: 8c4bfdf69368512e85b1d8b724dd7546abeb30af
+  CapacitorHaptics: 9ebc9363f0e9b8eb4295088a0b474530acf1859b
+  CapacitorKeyboard: deacbd09d8d1029c3681197fb05d206b721d5f73
+  CapacitorStatusBar: 2e4369f99166125435641b1908d05f561eaba6f6
+  OSBarcodeLib: ced133bc1ec073636e18c6a0553d0a5c4b90cf17
 
-PODFILE CHECKSUM: e4140fc02500ab3a454d73af10000b75805fc486
+PODFILE CHECKSUM: 1d6169ce9a8e5c5a436844292f343842268f688b
 
 COCOAPODS: 1.15.2

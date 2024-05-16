@@ -11,6 +11,14 @@ npx cap sync
 
 #### Android
 
+The barcode scanner plugin requires a minimum Android SDK target of 26. This is higher than the default that comes with your Capacitor application. You can update this value in your `android/variables.gradle` file.
+
+```gradle
+ext {
+    minSdkVersion = 26
+}
+```
+
 You will need to modify the `allprojects > repositories` section in your `android/build.gradle` file to include the Outsystems repository. Your `android/build.gradle` file should look similar to this after adding the repository.
 
 ```gradle
@@ -32,6 +40,10 @@ allprojects {
     }
 }
 ```
+
+#### iOS
+
+The barcode scanner uses the camera on the device. Ensure you configure the Privacy - Camera Usage Description in your Info.plist file so that your application can access the device's camera.
 
 ---
 

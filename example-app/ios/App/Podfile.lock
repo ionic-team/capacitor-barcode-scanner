@@ -3,7 +3,7 @@ PODS:
     - CapacitorCordova
   - CapacitorApp (6.0.0):
     - Capacitor
-  - CapacitorBarcodeScanner (1.0.0-alpha.0):
+  - CapacitorBarcodeScanner (1.0.0):
     - Capacitor
     - OSBarcodeLib (~> 1.1.0)
   - CapacitorCordova (6.0.0)
@@ -47,7 +47,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Capacitor: 559d073c4ca6c27f8e7002c807eea94c3ba435a9
   CapacitorApp: 9d53aec7101f7b030a950c5bdc4df8612576b279
-  CapacitorBarcodeScanner: 80444aa11d911dac09a6af454560db735de81ee6
+  CapacitorBarcodeScanner: 3780aa09a86e526b2903d3b804bd867100f4c924
   CapacitorCordova: 8c4bfdf69368512e85b1d8b724dd7546abeb30af
   CapacitorHaptics: 9ebc9363f0e9b8eb4295088a0b474530acf1859b
   CapacitorKeyboard: deacbd09d8d1029c3681197fb05d206b721d5f73

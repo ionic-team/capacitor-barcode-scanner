@@ -77,7 +77,8 @@ repositories {
 
 dependencies {
     // implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'])
-    implementation "com.github.outsystems:osbarcode-android:[1.0.1, 2.0.0[@aar"
+    //noinspection GradleDynamicVersion
+    implementation "com.github.outsystems:osbarcode-android:1.+@aar"
     implementation project(':capacitor-android')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     implementation 'androidx.activity:activity-ktx:1.8.2'

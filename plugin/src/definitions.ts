@@ -61,10 +61,12 @@ export type CapacitorBarcodeScannerOptions = {
   scanButton?: boolean;
   scanText?: string;
   cameraDirection?: CapacitorBarcodeScannerCameraDirection;
-  scanOrientation?: CapacitorBarcodeScannerScanOrientation;
-  android?: {
-    scanningLibrary?: CapacitorBarcodeScannerAndroidScanningLibrary;
-  };
+  native?: { 
+    scanOrientation?: CapacitorBarcodeScannerScanOrientation; 
+    android?: { 
+      scanningLibrary?: CapacitorBarcodeScannerAndroidScanningLibrary; 
+    }; 
+  }
   web?: {
     showCameraSelection?: boolean;
     scannerFPS?: number;

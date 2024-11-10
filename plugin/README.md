@@ -47,6 +47,23 @@ The barcode scanner uses the camera on the device. Ensure you configure the Priv
 
 ---
 
+## Example
+
+```typescript
+import { CapacitorBarcodeScanner, CapacitorBarcodeScannerOptions, CapacitorBarcodeScannerTypeHintALLOption } from '@capacitor/barcode-scanner';
+
+const options: CapacitorBarcodeScannerOptions =
+{
+    hint: CapacitorBarcodeScannerTypeHintALLOption.ALL
+};
+
+const result = await CapacitorBarcodeScanner.scanBarcode(options);
+if (result?.ScanResult)
+{
+    console.log('Scanned barcode:', result.ScanResult);
+}
+```
+
 ## API
 
 <docgen-index>

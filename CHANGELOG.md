@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v1.0.1...v1.0.2) (2024-12-02)
+
+
+### Bug Fixes
+
+* **android:** pin `osbarcode-android` library version to 1.1.3 to resolve camera compatibility issue ([319fd31](https://github.com/ionic-team/capacitor-barcode-scanner/commit/319fd31e4d8a87511be5767fca68e19483ac3ea2))
+* **example-app:** Set minSdkVersion version to 26 ([#9](https://github.com/ionic-team/capacitor-barcode-scanner/issues/9)) ([ddfb3e4](https://github.com/ionic-team/capacitor-barcode-scanner/commit/ddfb3e493713d49ac0dc7142da357d9c5f790958))
+* use gradle's all distribution type ([ad9aa42](https://github.com/ionic-team/capacitor-barcode-scanner/commit/ad9aa42e3e423518644ddd86b47c64ea0bf237fd))
+
+
+
+
+
 ## [1.0.1](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v1.0.0...v1.0.1) (2024-05-16)
 
 

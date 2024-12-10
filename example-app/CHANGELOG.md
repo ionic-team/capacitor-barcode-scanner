@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v1.0.3...v1.0.4) (2024-12-10)
+
+
+### Reverts
+
+* Revert "chore(android): bump kotlin, gradle and aar versions (#45)" ([a20c7cf](https://github.com/ionic-team/capacitor-barcode-scanner/commit/a20c7cfa2fa2cc727ceff9b0293ce6cdbd7d9de0)), closes [#45](https://github.com/ionic-team/capacitor-barcode-scanner/issues/45)
+
+
+
+
+
 ## [1.0.3](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v1.0.1...v1.0.3) (2024-12-02)
 
 

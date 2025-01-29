@@ -69,3 +69,16 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Features
 
 * **web:** Implement scanning on the web ([f1d1105](https://github.com/ionic-team/capacitor-barcode-scanner/commit/f1d11053996969790e7f468c024606cb61479b63))
+
+# [2.0.0](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v1.0.4...v2.0.0) (2024-03-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* Updated to support Capacitor 7
+* Minimum Android SDK version increased to align with Capacitor 7 requirements
+* Minimum iOS deployment target increased to align with Capacitor 7 requirements
+
+### Features
+
+* Add support for Capacitor 7

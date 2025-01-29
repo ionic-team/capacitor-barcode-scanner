@@ -45,3 +45,16 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 # 1.0.0-alpha.1 (2024-04-16)
 
 **Note:** Version bump only for package @capacitor/barcode-scanner
+
+# [2.0.0](/compare/v1.0.2...v2.0.0) (2024-03-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* Updated to support Capacitor 7
+* Minimum Android SDK version increased to align with Capacitor 7 requirements
+* Minimum iOS deployment target increased to align with Capacitor 7 requirements
+
+### Features
+
+* Add support for Capacitor 7

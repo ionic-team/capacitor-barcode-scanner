@@ -4,7 +4,7 @@ on:
   workflow_call:
     secrets:
       CAP_GH_RELEASE_TOKEN:
-        required: true
+        required: false
 
 jobs:
   lint:

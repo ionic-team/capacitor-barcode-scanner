@@ -122,7 +122,9 @@ export class CapacitorBarcodeScannerWeb extends WebPlugin implements CapacitorBa
       };
 
       const OSBarcodeWebScannerErrorCallback = (error: string) => {
-        if (error.indexOf('NotFoundException') === -1 && error.indexOf('No barcode or QR code detected') === -1) {
+        const allowedErrors = ['No barcode or QR code detected', 'No MultiFormat Readers were able to detect the code'];
+
+        if (!allowedErrors.find((e) => error.indexOf(e) !== -1)) {
           this.stopAndHideScanner();
           console.error(`[Scanner Web Error] ${error}`);
           reject(error);

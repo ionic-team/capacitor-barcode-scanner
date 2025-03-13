@@ -34,7 +34,7 @@ class CapacitorBarcodeScannerPlugin : Plugin() {
         val scanText = call.getString("scanText", "") ?: ""
         val cameraDirection = call.getInt("cameraDirection")
         val scanOrientation = call.getInt("scanOrientation")
-        val androidScanningLibrary = call.getObject("android")?.getString("androidScanningLibrary")
+        val androidScanningLibrary = call.getObject("android")?.getString("scanningLibrary")
 
         val parameters = OSBARCScanParameters(
                 scanInstructions = scanInstructions,

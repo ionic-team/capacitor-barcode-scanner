@@ -27,10 +27,4 @@ enum OSBarcodeError: Int, CustomNSError, LocalizedError {
             return "OS-PLUG-BARC-\(String(format: "%04d", self.rawValue))"
         }
 
-    var errorDictionary: [String: String] {
-        [
-            OSBarcodeErrorLabels.code: "\(OSBarcodeErrorLabels.codeFormat)\(String(format: "%04d", self.rawValue))",
-            OSBarcodeErrorLabels.message: self.errorDescription ?? ""
-        ]
-    }
 }

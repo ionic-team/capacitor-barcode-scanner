@@ -24,7 +24,7 @@ enum OSBarcodeError: Int, CustomNSError, LocalizedError {
     }
     
     var errorCode: String {
-            return "OS-PLUG-BARC-\(String(format: "%04d", self.rawValue))"
-        }
+        return "\(OSBarcodeErrorLabels.codeFormat)\(String(format: "%04d", self.rawValue))"
+    }
 
 }

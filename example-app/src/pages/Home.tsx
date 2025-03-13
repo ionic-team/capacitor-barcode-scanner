@@ -7,10 +7,18 @@ const Home: React.FC = () => {
   const [scannerResult, setScannerResult] = useState<string>('No Data...');
 
   const scanBarcode = async () => {
-    const result = await CapacitorBarcodeScanner.scanBarcode({
-      hint: CapacitorBarcodeScannerTypeHint.ALL
-    });
-    setScannerResult(result.ScanResult);
+    try {
+      const result = await CapacitorBarcodeScanner.scanBarcode({
+        hint: CapacitorBarcodeScannerTypeHint.ALL
+      });
+      setScannerResult(result.ScanResult);
+    } catch (error) {
+      if (error instanceof Error) {
+        setScannerResult("Error: " + error.message);
+      } else {
+        setScannerResult("Error: Unknown error");
+      }
+    }
   };
 
   return (

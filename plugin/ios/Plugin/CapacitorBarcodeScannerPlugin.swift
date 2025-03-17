@@ -22,13 +22,13 @@ public class CapacitorBarcodeScannerPlugin: CAPPlugin {
         }
 
         guard let manager = self.manager else {
-            call.reject("Capacitor bridge or viewController is not initialized.")
+            call.sendError(with: OSBarcodeError.bridgeNotInitialized)
             return
         }
 
         guard let argumentsData = try? JSONSerialization.data(withJSONObject: call.jsObjectRepresentation),
               let scanArguments = try? JSONDecoder().decode(OSBarcodeScanArgumentsModel.self, from: argumentsData) else {
-            call.reject("Error decoding scan arguments")
+            call.sendError(with: OSBarcodeError.scanInputArgumentsIssue)
             return
         }
 
@@ -37,12 +37,20 @@ public class CapacitorBarcodeScannerPlugin: CAPPlugin {
                 let scannedBarcode = try await manager.scanBarcode(with: scanArguments.scanInstructions, scanArguments.scanButtonText, scanArguments.cameraDirection, and: scanArguments.scanOrientation)
                 call.resolve(["ScanResult": scannedBarcode])
             } catch OSBARCManagerError.cameraAccessDenied {
-                call.reject("Camera access denied")
+                call.sendError(with: OSBarcodeError.cameraAccessDenied)
             } catch OSBARCManagerError.scanningCancelled {
-                call.reject("Scanning cancelled")
+                call.sendError(with: OSBarcodeError.scanningCancelled)
             } catch {
-                call.reject("An unexpected error occurred: \(error.localizedDescription)")
+                call.sendError(with: OSBarcodeError.scanningError)
             }
         }
     }
+}
+
+extension CAPPluginCall {
+    
+    func sendError(with error: OSBarcodeError) {
+        self.reject(error.errorDescription, error.errorCode)
+    }
+    
 }

@@ -1,16 +1,32 @@
 import { IonButton, IonContent, IonHeader, IonInput, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './Home.css';
 import { useState } from 'react';
-import { CapacitorBarcodeScanner, CapacitorBarcodeScannerTypeHint } from '@capacitor/barcode-scanner';
+import { CapacitorBarcodeScanner, CapacitorBarcodeScannerAndroidScanningLibrary, CapacitorBarcodeScannerCameraDirection, CapacitorBarcodeScannerScanOrientation, CapacitorBarcodeScannerTypeHint } from '@capacitor/barcode-scanner';
 
 const Home: React.FC = () => {
   const [scannerResult, setScannerResult] = useState<string>('No Data...');
 
   const scanBarcode = async () => {
-    const result = await CapacitorBarcodeScanner.scanBarcode({
-      hint: CapacitorBarcodeScannerTypeHint.ALL
-    });
-    setScannerResult(result.ScanResult);
+    try {
+      const result = await CapacitorBarcodeScanner.scanBarcode({
+        hint: CapacitorBarcodeScannerTypeHint.ALL,
+        scanInstructions: "Please scan a barcode",
+        scanButton: true,
+        scanText: "Scan",
+        cameraDirection: CapacitorBarcodeScannerCameraDirection.BACK,
+        scanOrientation: CapacitorBarcodeScannerScanOrientation.ADAPTIVE,
+        android: {
+          scanningLibrary: CapacitorBarcodeScannerAndroidScanningLibrary.ZXING
+        }
+      });
+      setScannerResult(result.ScanResult);
+    } catch (error) {
+      if (error instanceof Error) {
+        setScannerResult("Error: " + error.message);
+      } else {
+        setScannerResult("Error: Unknown error");
+      }
+    }
   };
 
   return (

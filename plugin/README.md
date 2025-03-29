@@ -21,8 +21,11 @@ ext {
 
 #### iOS
 
-The barcode scanner uses the camera on the device. Ensure you configure the Privacy - Camera Usage Description in your Info.plist file so that your application can access the device's camera.
-
+The barcode scanner uses the camera on the device. Ensure you configure the Privacy - Camera Usage Description in your `Info.plist` file so that your application can access the device's camera.
+```xml
+<key>NSCameraUsageDescription</key>
+<string>Your description</string>
+```
 ---
 
 ## API

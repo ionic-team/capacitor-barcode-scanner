@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.4](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v2.0.3...v2.0.4) (2025-08-20)
+
+**Note:** Version bump only for package example-app
+
+
+
+
+
 ## [1.0.2](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v1.0.1...v1.0.2) (2024-12-02)
 
 

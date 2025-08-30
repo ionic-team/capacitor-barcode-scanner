@@ -111,7 +111,7 @@ export class CapacitorBarcodeScannerWeb extends WebPlugin implements CapacitorBa
           focusMode: 'continuous',
           height: { min: 576, ideal: 1920 },
           deviceId: undefined,
-          facingMode: undefined,
+          facingMode: param.facingMode,
         },
       };
 

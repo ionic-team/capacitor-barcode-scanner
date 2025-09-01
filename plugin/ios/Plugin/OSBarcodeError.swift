@@ -22,7 +22,7 @@ enum OSBarcodeError: Int, CustomNSError, LocalizedError {
         case .bridgeNotInitialized: return "Capacitor bridge or viewController is not initialized."
         }
     }
-    
+
     var errorCode: String {
         return "\(OSBarcodeErrorLabels.codeFormat)\(String(format: "%04d", self.rawValue))"
     }

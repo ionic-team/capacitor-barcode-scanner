@@ -102,7 +102,10 @@ export class CapacitorBarcodeScannerWeb extends WebPlugin implements CapacitorBa
         throw new Error('Scanner Element is required for web');
       }
 
-      (window as any).OSBarcodeWebScanner = new Html5Qrcode(scannerElement.id);
+      (window as any).OSBarcodeWebScanner = new Html5Qrcode(scannerElement.id, {
+        formatsToSupport: param.typeHint !== undefined ? [param.typeHint] : undefined,
+        verbose: undefined,
+      });
       const Html5QrcodeConfig = {
         fps: param.scannerFPS,
         qrbox: scannerElement.getBoundingClientRect().width * (9 / 16) - 10,

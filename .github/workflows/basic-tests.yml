@@ -41,9 +41,12 @@ jobs:
       - name: 'Build plugin'
         working-directory: ./plugin
         run: npm run build
+      - name: 'Build Web example app'
+        working-directory: ./example-app
+        run: npm run build
       - name: 'Sync example app native platforms'
         working-directory: ./example-app
-        run: ionic cap sync
+        run: npx cap sync
       - name: 'Build Android example app'
         working-directory: ./example-app/android
         run: ./gradlew clean assembleDebug

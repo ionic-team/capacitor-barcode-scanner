@@ -50,7 +50,10 @@ export enum CapacitorBarcodeScannerAndroidScanningLibrary {
 /**
  * Defines the structure of the result returned from a barcode scan.
  */
-export type CapacitorBarcodeScannerScanResult = { ScanResult: string };
+export type CapacitorBarcodeScannerScanResult = {
+  ScanResult: string;
+  format: CapacitorBarcodeScannerTypeHint;
+};
 
 /**
  * Defines the options for configuring a barcode scan.

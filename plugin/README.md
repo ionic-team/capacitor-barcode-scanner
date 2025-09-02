@@ -63,14 +63,7 @@ scanBarcode(options: CapacitorBarcodeScannerOptions) => Promise<CapacitorBarcode
 
 Defines the structure of the result returned from a barcode scan.
 
-<code>{ ScanResult: string }</code>
-
-
-#### CapacitorBarcodeScannerOptions
-
-Defines the options for configuring a barcode scan.
-
-<code>{ hint: <a href="#capacitorbarcodescannertypehint">CapacitorBarcodeScannerTypeHint</a>; scanInstructions?: string; scanButton?: boolean; scanText?: string; cameraDirection?: <a href="#capacitorbarcodescannercameradirection">CapacitorBarcodeScannerCameraDirection</a>; scanOrientation?: <a href="#capacitorbarcodescannerscanorientation">CapacitorBarcodeScannerScanOrientation</a>; android?: { scanningLibrary?: <a href="#capacitorbarcodescannerandroidscanninglibrary">CapacitorBarcodeScannerAndroidScanningLibrary</a>; }; web?: { showCameraSelection?: boolean; scannerFPS?: number; }; }</code>
+<code>{ ScanResult: string; format: <a href="#capacitorbarcodescannertypehint">CapacitorBarcodeScannerTypeHint</a>; }</code>
 
 
 #### CapacitorBarcodeScannerTypeHint
@@ -81,6 +74,13 @@ Type definition combining <a href="#html5qrcodesupportedformats">Html5QrcodeSupp
 to represent the hint for the type of barcode to be scanned.
 
 <code><a href="#html5qrcodesupportedformats">Html5QrcodeSupportedFormats</a> | <a href="#capacitorbarcodescannertypehintalloption">CapacitorBarcodeScannerTypeHintALLOption</a></code>
+
+
+#### CapacitorBarcodeScannerOptions
+
+Defines the options for configuring a barcode scan.
+
+<code>{ hint: <a href="#capacitorbarcodescannertypehint">CapacitorBarcodeScannerTypeHint</a>; scanInstructions?: string; scanButton?: boolean; scanText?: string; cameraDirection?: <a href="#capacitorbarcodescannercameradirection">CapacitorBarcodeScannerCameraDirection</a>; scanOrientation?: <a href="#capacitorbarcodescannerscanorientation">CapacitorBarcodeScannerScanOrientation</a>; android?: { scanningLibrary?: <a href="#capacitorbarcodescannerandroidscanninglibrary">CapacitorBarcodeScannerAndroidScanningLibrary</a>; }; web?: { showCameraSelection?: boolean; scannerFPS?: number; }; }</code>
 
 
 ### Enums

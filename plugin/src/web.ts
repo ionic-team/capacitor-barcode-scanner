@@ -7,7 +7,7 @@ import type {
   CapacitorBarcodeScannerOptions,
   CapacitorBarcodeScannerScanResult,
 } from './definitions';
-import { CapacitorBarcodeScannerScanOrientation } from './definitions';
+import { CapacitorBarcodeScannerScanOrientation, CapacitorBarcodeScannerTypeHint } from './definitions';
 
 /**
  * Implements OSBarcodePlugin to provide web functionality for barcode scanning.
@@ -116,9 +116,12 @@ export class CapacitorBarcodeScannerWeb extends WebPlugin implements CapacitorBa
       };
 
       // Success and error callbacks for the scanner
-      const OSBarcodeWebScannerSuccessCallback = (decodedText: string, _decodedResult: Html5QrcodeResult) => {
+      const OSBarcodeWebScannerSuccessCallback = (decodedText: string, decodedResult: Html5QrcodeResult) => {
         this.stopAndHideScanner();
-        resolve({ ScanResult: decodedText });
+        resolve({
+          ScanResult: decodedText,
+          format: decodedResult.result.format?.format ?? CapacitorBarcodeScannerTypeHint.ALL,
+        });
       };
 
       const OSBarcodeWebScannerErrorCallback = (error: string) => {

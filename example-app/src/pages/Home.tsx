@@ -9,6 +9,7 @@ import {
   IonPage,
   IonSelect,
   IonSelectOption,
+  IonTextarea,
   IonTitle,
   IonToggle,
   IonToolbar,
@@ -26,6 +27,7 @@ import { Capacitor } from '@capacitor/core';
 
 const Home: React.FC = () => {
   const [scannerResult, setScannerResult] = useState<string>('No Data...');
+  const [scanFormat, setScanFormat] = useState<CapacitorBarcodeScannerTypeHint | undefined>(undefined);
 
   const [hint, setHint] = useState(CapacitorBarcodeScannerTypeHint.ALL);
   const [scanInstructions, setScanInstructions] = useState("Please scan a barcode");
@@ -51,12 +53,14 @@ const Home: React.FC = () => {
         }
       });
       setScannerResult(result.ScanResult);
+      setScanFormat(result.format);
     } catch (error) {
       if (error instanceof Error) {
         setScannerResult("Error: " + error.message);
       } else {
         setScannerResult("Error: Unknown error");
       }
+      setScanFormat(undefined);
     }
   };
 
@@ -74,7 +78,9 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <div style={{ marginTop: '25px' }}></div>
-        <IonInput value={scannerResult} label="Scanner Result" labelPlacement="floating" readonly={true} fill="outline" placeholder="No Data..."></IonInput>
+        <IonTextarea value={scannerResult} label="Scanner Result" labelPlacement="floating" readonly={true} fill="outline" autoGrow={true} placeholder="No Data..." className="scanner-textarea"></IonTextarea>
+        {scanFormat !== undefined && (<IonLabel>Format: {CapacitorBarcodeScannerTypeHint[scanFormat]}</IonLabel>)}
+        <p></p>
         <IonButton onClick={scanBarcode}>Scan</IonButton>
         <div style={{ marginTop: '50px' }}></div>
 

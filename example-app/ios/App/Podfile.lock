@@ -3,9 +3,9 @@ PODS:
     - CapacitorCordova
   - CapacitorBarcodeScanner (2.0.4):
     - Capacitor
-    - OSBarcodeLib (~> 2.0.0)
+    - OSBarcodeLib (= 2.0.1)
   - CapacitorCordova (7.4.3)
-  - OSBarcodeLib (2.0.0)
+  - OSBarcodeLib (2.0.1)
 
 DEPENDENCIES:
   - "Capacitor (from `../../../node_modules/.pnpm/@capacitor+ios@7.4.3_@capacitor+core@7.4.3/node_modules/@capacitor/ios`)"
@@ -26,9 +26,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Capacitor: b4741ca7affb32c1b70debd03df92cbf522d8a80
-  CapacitorBarcodeScanner: f4a457ff894c4ae111ba4684dbe5f35f73f50d34
+  CapacitorBarcodeScanner: b8a3d4ed0a0d2ed2cd78a16b76737cacbf8da207
   CapacitorCordova: 435121e81a2df4d0034f0fb11fcefab5104cfdb5
-  OSBarcodeLib: 24d6925a977fb51047c6ec2db81ab9dca4cdddba
+  OSBarcodeLib: 57987d2eb1f916f701f4554e20e349b3cb83f023
 
 PODFILE CHECKSUM: fdf735c62a9097dffa919e728a30c55c44e3a7f6
 

@@ -9,10 +9,10 @@ end
 
 target 'Plugin' do
   capacitor_pods
-  pod 'OSBarcodeLib', '~> 2.0.0'
+  pod 'OSBarcodeLib', '2.0.1'
 end
 
 target 'PluginTests' do
   capacitor_pods
-  pod 'OSBarcodeLib', '~> 2.0.0'
+  pod 'OSBarcodeLib', '2.0.1'
 end

@@ -5,7 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [2.0.4](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v2.0.3...v2.0.4) (2025-08-20)
 
-**Note:** Version bump only for package example-app
+### Performance improvements
+
+* (android) Reduce memory consumption for ML Kit ([#82](https://github.com/ionic-team/capacitor-barcode-scanner/pull/82))
 
 
 

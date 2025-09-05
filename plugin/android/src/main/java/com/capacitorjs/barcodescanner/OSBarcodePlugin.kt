@@ -10,6 +10,8 @@ import com.getcapacitor.annotation.ActivityCallback
 import com.getcapacitor.annotation.CapacitorPlugin
 import com.outsystems.plugins.barcode.controller.OSBARCController
 import com.outsystems.plugins.barcode.model.OSBARCScanParameters
+import com.outsystems.plugins.barcode.model.OSBARCScanResult
+import com.outsystems.plugins.barcode.model.OSBARCScannerHint
 import com.outsystems.plugins.barcode.view.OSBARCScannerActivity
 
 @CapacitorPlugin(name = "CapacitorBarcodeScanner")
@@ -28,7 +30,9 @@ class CapacitorBarcodeScannerPlugin : Plugin() {
 
     @PluginMethod
     fun scanBarcode(call: PluginCall) {
-        val hint = call.getInt("hint")
+        val hint: OSBARCScannerHint? = call.getInt("hint")?.let {
+            OSBARCScannerHint.entries.getOrNull(it)
+        }
         val scanInstructions = call.getString("scanInstructions")
         val scanButton = call.getBoolean("scanButton", false) ?: false
         val scanText = call.getString("scanText", "") ?: ""
@@ -56,9 +60,10 @@ class CapacitorBarcodeScannerPlugin : Plugin() {
     fun handleScanResult(call: PluginCall, result: ActivityResult) {
         barcodeController.handleActivityResult(
                 SCAN_REQUEST_CODE, result.resultCode, result.data,
-                onSuccess = { scanResult ->
+                onSuccess = { scanResult: OSBARCScanResult ->
                     val ret = JSObject()
-                    ret.put("ScanResult", scanResult)
+                    ret.put("ScanResult", scanResult.text)
+                    ret.put("format", scanResult.format.ordinal)
                     call.resolve(ret)
                 },
                 onError = { error ->

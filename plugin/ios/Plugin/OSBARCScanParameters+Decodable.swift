@@ -1,11 +1,7 @@
 import Foundation
 import OSBarcodeLib
 
-struct OSBarcodeScanArgumentsModel: Decodable {
-    let scanInstructions: String
-    let scanButtonText: String?
-    let cameraDirection: OSBARCCameraModel
-    let scanOrientation: OSBARCOrientationModel
+extension OSBARCScanParameters: Decodable {
 
     enum CodingKeys: CodingKey {
         case scanButton
@@ -13,9 +9,10 @@ struct OSBarcodeScanArgumentsModel: Decodable {
         case scanText
         case cameraDirection
         case scanOrientation
+        case hint
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         let scanInstructions = try container.decode(String.self, forKey: .scanInstructions)
@@ -32,13 +29,15 @@ struct OSBarcodeScanArgumentsModel: Decodable {
         let scanOrientationInt = try container.decode(Int.self, forKey: .scanOrientation)
         let scanOrientation = OSBARCOrientationModel.map(value: scanOrientationInt)
 
-        self.init(scanInstructions, scanButtonText, cameraDirection, scanOrientation)
-    }
+        let hintInt = try container.decode(Int.self, forKey: .hint)
+        let hint = OSBARCScannerHint(rawValue: hintInt)
 
-    private init(_ scanInstructions: String, _ scanButtonText: String?, _ cameraDirection: OSBARCCameraModel, _ scanOrientation: OSBARCOrientationModel) {
-        self.scanInstructions = scanInstructions
-        self.scanButtonText = scanButtonText
-        self.cameraDirection = cameraDirection
-        self.scanOrientation = scanOrientation
+        self.init(
+            scanInstructions: scanInstructions,
+            scanButtonText: scanButtonText,
+            cameraDirection: cameraDirection,
+            scanOrientation: scanOrientation,
+            hint: hint
+        )
     }
 }

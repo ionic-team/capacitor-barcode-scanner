@@ -7,7 +7,7 @@ import type {
   CapacitorBarcodeScannerOptions,
   CapacitorBarcodeScannerScanResult,
 } from './definitions';
-import { CapacitorBarcodeScannerScanOrientation } from './definitions';
+import { CapacitorBarcodeScannerScanOrientation, CapacitorBarcodeScannerTypeHint } from './definitions';
 
 /**
  * Implements OSBarcodePlugin to provide web functionality for barcode scanning.
@@ -102,7 +102,10 @@ export class CapacitorBarcodeScannerWeb extends WebPlugin implements CapacitorBa
         throw new Error('Scanner Element is required for web');
       }
 
-      (window as any).OSBarcodeWebScanner = new Html5Qrcode(scannerElement.id);
+      (window as any).OSBarcodeWebScanner = new Html5Qrcode(scannerElement.id, {
+        formatsToSupport: param.typeHint !== undefined ? [param.typeHint] : undefined,
+        verbose: undefined,
+      });
       const Html5QrcodeConfig = {
         fps: param.scannerFPS,
         qrbox: scannerElement.getBoundingClientRect().width * (9 / 16) - 10,
@@ -116,13 +119,20 @@ export class CapacitorBarcodeScannerWeb extends WebPlugin implements CapacitorBa
       };
 
       // Success and error callbacks for the scanner
-      const OSBarcodeWebScannerSuccessCallback = (decodedText: string, _decodedResult: Html5QrcodeResult) => {
+      const OSBarcodeWebScannerSuccessCallback = (decodedText: string, decodedResult: Html5QrcodeResult) => {
         this.stopAndHideScanner();
-        resolve({ ScanResult: decodedText });
+        resolve({
+          ScanResult: decodedText,
+          format: decodedResult.result.format?.format ?? CapacitorBarcodeScannerTypeHint.ALL,
+        });
       };
 
       const OSBarcodeWebScannerErrorCallback = (error: string) => {
-        const allowedErrors = ['NotFoundException', 'No barcode or QR code detected', 'No MultiFormat Readers were able to detect the code'];
+        const allowedErrors = [
+          'NotFoundException',
+          'No barcode or QR code detected',
+          'No MultiFormat Readers were able to detect the code',
+        ];
 
         if (!allowedErrors.find((e) => error.indexOf(e) !== -1)) {
           this.stopAndHideScanner();

@@ -27,15 +27,15 @@ public class CapacitorBarcodeScannerPlugin: CAPPlugin {
         }
 
         guard let argumentsData = try? JSONSerialization.data(withJSONObject: call.jsObjectRepresentation),
-              let scanArguments = try? JSONDecoder().decode(OSBarcodeScanArgumentsModel.self, from: argumentsData) else {
+              let scanArguments = try? JSONDecoder().decode(OSBARCScanParameters.self, from: argumentsData) else {
             call.sendError(with: OSBarcodeError.scanInputArgumentsIssue)
             return
         }
 
         Task {
             do {
-                let scannedBarcode = try await manager.scanBarcode(with: scanArguments.scanInstructions, scanArguments.scanButtonText, scanArguments.cameraDirection, and: scanArguments.scanOrientation)
-                call.resolve(["ScanResult": scannedBarcode])
+                let scannedBarcode = try await manager.scanBarcode(with: scanArguments)
+                call.resolve(["ScanResult": scannedBarcode.text, "format": scannedBarcode.format.rawValue])
             } catch OSBARCManagerError.cameraAccessDenied {
                 call.sendError(with: OSBarcodeError.cameraAccessDenied)
             } catch OSBARCManagerError.scanningCancelled {
@@ -48,9 +48,9 @@ public class CapacitorBarcodeScannerPlugin: CAPPlugin {
 }
 
 extension CAPPluginCall {
-    
+
     func sendError(with error: OSBarcodeError) {
         self.reject(error.errorDescription, error.errorCode)
     }
-    
+
 }

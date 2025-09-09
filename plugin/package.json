@@ -16,6 +16,7 @@
   ],
   "author": "OutSystems",
   "license": "MIT",
+  "homepage": "https://github.com/ionic-team/capacitor-barcode-scanner",
   "repository": {
     "type": "git",
     "url": "git+github.com/ionic-team/capacitor-barcode-scanner.git"

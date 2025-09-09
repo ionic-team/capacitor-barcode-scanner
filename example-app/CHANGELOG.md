@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v2.0.4...v2.1.0) (2025-09-09)
+
+
+### Features
+
+* Use hint and return barcode format ([#86](https://github.com/ionic-team/capacitor-barcode-scanner/issues/86)) ([e3de532](https://github.com/ionic-team/capacitor-barcode-scanner/commit/e3de532351db36674c4f0f372b705d299f63b785))
+
+
+
+
+
 ## [2.0.4](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v2.0.3...v2.0.4) (2025-08-20)
 
 ### Performance improvements

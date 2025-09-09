@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](/compare/v2.0.4...v2.1.0) (2025-09-09)
+
+
+### Bug Fixes
+
+* **web:** enable back camera support in browser environment (#85) f0f81c4, closes #85
+* **web:** ignore "No MultiFormat Readers" error (#64) 29f0def, closes #64
+
+
+### Features
+
+* Use hint and return barcode format (#86) e3de532, closes #86
+
+
+
+
+
 ## [2.0.4](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v2.0.3...v2.0.4) (2025-08-20)
 
 ### Performance improvements

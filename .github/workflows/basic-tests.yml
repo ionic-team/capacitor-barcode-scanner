@@ -17,3 +17,39 @@ jobs:
   build-packages:
     needs: 'setup'
     uses: ./.github/workflows/reusable_build-packages.yml
+
+  verify-plugin:
+    needs: ['setup', 'lint-test', 'build-packages']
+    runs-on: 'macos-14'
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: 'Setup Tools'
+        uses: ./.github/actions/setup-tools
+      - name: 'Verify iOS + Android + Web'
+        working-directory: ./plugin
+        run: npm run verify
+
+  build-example-app:
+    needs: ['verify-plugin']
+    runs-on: 'macos-14'
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: 'Setup Tools'
+        uses: ./.github/actions/setup-tools
+      - name: 'Build plugin'
+        working-directory: ./plugin
+        run: npm run build
+      - name: 'Build Web example app'
+        working-directory: ./example-app
+        run: npm run build
+      - name: 'Sync example app native platforms'
+        working-directory: ./example-app
+        run: npx cap sync
+      - name: 'Build Android example app'
+        working-directory: ./example-app/android
+        run: ./gradlew clean assembleDebug
+      - name: 'Build iOS example app'
+        working-directory: ./example-app/ios/App
+        run: xcodebuild clean build -workspace App.xcworkspace -scheme App CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO

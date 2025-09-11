@@ -1,7 +1,7 @@
 {
-  "name": "@capacitor/barcode-scanner",
-  "version": "2.1.0",
-  "description": "Capacitor plugin using Outsystems Barcode libs",
+  "name": "@enzogireaud/capacitor-barcode-scanner",
+  "version": "2.1.1",
+  "description": "Capacitor plugin using Outsystems Barcode libs - Enhanced with proper camera direction support for web",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -14,19 +14,22 @@
     "CapacitorBarcodeScanner.podspec",
     "scripts/"
   ],
-  "author": "OutSystems",
+  "author": "Enzo (based on OutSystems work)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+github.com/ionic-team/capacitor-barcode-scanner.git"
+    "url": "git+github.com/enzogireaud/capacitor-barcode-scanner.git"
   },
   "bugs": {
-    "url": "https://github.com/ionic-team/capacitor-barcode-scanner/issues"
+    "url": "https://github.com/enzogireaud/capacitor-barcode-scanner/issues"
   },
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "native",
+    "barcode",
+    "camera-direction",
+    "web-enhanced"
   ],
   "publishConfig": {
     "access": "public"

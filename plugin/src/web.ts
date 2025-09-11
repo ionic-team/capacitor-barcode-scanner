@@ -7,12 +7,19 @@ import type {
   CapacitorBarcodeScannerOptions,
   CapacitorBarcodeScannerScanResult,
 } from './definitions';
-import { CapacitorBarcodeScannerScanOrientation, CapacitorBarcodeScannerTypeHint } from './definitions';
+import {
+  CapacitorBarcodeScannerCameraDirection,
+  CapacitorBarcodeScannerScanOrientation,
+  CapacitorBarcodeScannerTypeHint,
+} from './definitions';
 
 /**
  * Implements OSBarcodePlugin to provide web functionality for barcode scanning.
  */
 export class CapacitorBarcodeScannerWeb extends WebPlugin implements CapacitorBarcodeScannerPlugin {
+  private static _FORWARD = { facingMode: 'user' };
+  private static _BACK = { facingMode: 'environment' };
+  private _facingMode: MediaTrackConstraints = CapacitorBarcodeScannerWeb._BACK;
   /**
    * Stops the barcode scanner and hides its UI.
    * @private
@@ -81,9 +88,18 @@ export class CapacitorBarcodeScannerWeb extends WebPlugin implements CapacitorBa
     this.buildScannerElement();
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     document.getElementById('cap-os-barcode-scanner-container-dialog')!.style.display = 'block';
+
+    // Set the facing mode based on camera direction option
+    if (options.cameraDirection !== undefined) {
+      this._facingMode =
+        options.cameraDirection === CapacitorBarcodeScannerCameraDirection.BACK
+          ? CapacitorBarcodeScannerWeb._BACK
+          : CapacitorBarcodeScannerWeb._FORWARD;
+    }
+
     return new Promise((resolve, reject) => {
       const param = {
-        facingMode: options.cameraDirection === 1 ? 'environment' : 'user',
+        facingMode: this._facingMode.facingMode,
         hasScannerButton: false,
         scanButton: options.scanButton === undefined ? false : options.scanButton,
         showScanLine: false,
@@ -114,7 +130,7 @@ export class CapacitorBarcodeScannerWeb extends WebPlugin implements CapacitorBa
           focusMode: 'continuous',
           height: { min: 576, ideal: 1920 },
           deviceId: undefined,
-          facingMode: param.facingMode,
+          facingMode: this._facingMode.facingMode,
         },
       };
 
@@ -142,7 +158,7 @@ export class CapacitorBarcodeScannerWeb extends WebPlugin implements CapacitorBa
       };
 
       (window as any).OSBarcodeWebScanner.start(
-        { facingMode: param.facingMode },
+        this._facingMode,
         Html5QrcodeConfig,
         OSBarcodeWebScannerSuccessCallback,
         OSBarcodeWebScannerErrorCallback

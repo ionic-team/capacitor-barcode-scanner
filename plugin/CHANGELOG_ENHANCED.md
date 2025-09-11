@@ -39,7 +39,7 @@ videoConstraints: { facingMode: this._facingMode.facingMode }
 
 ### 🚀 Usage
 ```typescript
-import { CapacitorBarcodeScanner, CapacitorBarcodeScannerCameraDirection } from '@enzo/capacitor-barcode-scanner';
+import { CapacitorBarcodeScanner, CapacitorBarcodeScannerCameraDirection } from '@capacitor/barcode-scanner';
 
 // Use back camera (default)
 await CapacitorBarcodeScanner.scanBarcode({

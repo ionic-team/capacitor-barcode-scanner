@@ -1,7 +1,7 @@
 {
   "name": "@capacitor/barcode-scanner",
-  "version": "2.1.1",
-  "description": "Capacitor plugin for barcode scanning using OutSystems barcode libraries",
+  "version": "2.1.0",
+  "description": "Capacitor plugin using Outsystems Barcode libs",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -14,22 +14,19 @@
     "CapacitorBarcodeScanner.podspec",
     "scripts/"
   ],
-  "author": "Capacitor Community",
+  "author": "OutSystems",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ionic-team/capacitor-plugins.git"
+    "url": "git+github.com/ionic-team/capacitor-barcode-scanner.git"
   },
   "bugs": {
-    "url": "https://github.com/ionic-team/capacitor-plugins/issues"
+    "url": "https://github.com/ionic-team/capacitor-barcode-scanner/issues"
   },
   "keywords": [
     "capacitor",
     "plugin",
-    "native",
-    "barcode",
-    "camera-direction",
-    "scanner"
+    "native"
   ],
   "publishConfig": {
     "access": "public"

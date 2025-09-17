@@ -1,0 +1,5 @@
+.scanner-textarea {
+  max-height: 200px;  /* can grow up to 200px */
+  overflow-y: auto;   /* scroll if content exceeds max */
+  white-space: pre-wrap;
+}

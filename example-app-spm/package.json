@@ -12,7 +12,6 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@capacitor/android": "^7.0.0",
     "@capacitor/barcode-scanner": "file:../plugin/",
     "@capacitor/core": "^7.0.0",
     "@capacitor/ios": "^7.0.0",

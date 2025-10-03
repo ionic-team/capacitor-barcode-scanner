@@ -28,6 +28,14 @@ jobs:
         working-directory: plugin
         run: npx @capacitor/plugin-migration-v6-to-v7@latest
 
+      - name: Install PNPM dependencies
+        run: pnpm install
+        working-directory: .
+
+      - name: Build project
+        run: pnpm run build
+        working-directory: .
+
       - name: Build Android
         working-directory: plugin/android
         run: ./gradlew clean build

@@ -1,7 +1,10 @@
 name: Plugin Upgrade
 
 # Trigger manual
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - test/action-plugin-upgrade
 
 jobs:
   build:

@@ -23,7 +23,7 @@ jobs:
         run: java -version
 
       - name: Build Android
-        working-directory: android
+        working-directory: plugin/android
         run: ./gradlew clean build
 
       #- name: Run Capacitor Plugin Migration

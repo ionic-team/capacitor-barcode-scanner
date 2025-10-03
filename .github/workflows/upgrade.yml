@@ -1,14 +1,11 @@
 name: Plugin Upgrade
 
 # Trigger manual
-on:
-  workflow_dispatch:
+on: workflow_dispatch
 
 jobs:
   build:
     runs-on: macos-13
-
-  
 
     steps:
       - name: Checkout repository
@@ -26,6 +23,5 @@ jobs:
         working-directory: android
         run: ./gradlew clean build
 
-      # Opcional: executar migração de plugin
       #- name: Run Capacitor Plugin Migration
       #  run: npx @capacitor/plugin-migration-v6-to-v7@latest

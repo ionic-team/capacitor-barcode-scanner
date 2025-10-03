@@ -22,9 +22,9 @@ jobs:
       - name: Verify Java version
         run: java -version
 
-      - name: Build Android
-        working-directory: plugin/android
-        run: ./gradlew clean build
+      #- name: Build Android
+        #working-directory: plugin/android
+        #run: ./gradlew clean build
 
-      #- name: Run Capacitor Plugin Migration
-      #  run: npx @capacitor/plugin-migration-v6-to-v7@latest
+      - name: Run Capacitor Plugin Migration
+        run: npx @capacitor/plugin-migration-v6-to-v7@latest

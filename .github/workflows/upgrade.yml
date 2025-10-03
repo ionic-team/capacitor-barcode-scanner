@@ -16,8 +16,6 @@ jobs:
 
       - name: Setup Tools
         uses: ./.github/actions/setup-tools
-        with:
-          skip-install-on-cache-hit: 'false'
 
       - name: Verify Java version
         run: java -version
@@ -29,3 +27,7 @@ jobs:
       - name: Run Capacitor Plugin Migration
         working-directory: plugin
         run: npx @capacitor/plugin-migration-v6-to-v7@latest
+
+      - name: Build Android
+        working-directory: plugin/android
+        run: ./gradlew clean build

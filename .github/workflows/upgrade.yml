@@ -27,4 +27,5 @@ jobs:
         #run: ./gradlew clean build
 
       - name: Run Capacitor Plugin Migration
+        working-directory: plugin
         run: npx @capacitor/plugin-migration-v6-to-v7@latest

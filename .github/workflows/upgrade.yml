@@ -31,15 +31,27 @@ jobs:
         run: |
           git config user.name "Github Workflow (on behalf of ${{ github.actor }})"
           git config user.email "users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${CAP_GH_RELEASE_TOKEN}@github.com/${{ github.repository }}.git
+        env:
+          CAP_GH_RELEASE_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
 
       - name: Create branch for migration
-        run: git checkout -b plugin-migration-v7
+        run: |
+          # Deleta branch local se existir
+          git branch -D plugin-migration-v7 || true
+          # Deleta branch remoto se existir
+          git push origin --delete plugin-migration-v7 || true
+          # Cria branch novo
+          git checkout -b plugin-migration-v7
+        env:
+          CAP_GH_RELEASE_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
 
       - name: Commit plugin changes
         run: |
           git add .
-          git commit -m "Migrate plugin to Capacitor v7"
+          git diff --cached --quiet || git commit -m "Migrate plugin to Capacitor v7"
 
       - name: Push to branch
-        run: |
-          git push origin plugin-migration-v7
+        run: git push origin plugin-migration-v7
+        env:
+          CAP_GH_RELEASE_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}

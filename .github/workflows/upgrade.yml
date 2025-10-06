@@ -37,11 +37,8 @@ jobs:
 
       - name: Create branch for migration
         run: |
-          # Deleta branch local se existir
           git branch -D plugin-migration-v7 || true
-          # Deleta branch remoto se existir
           git push origin --delete plugin-migration-v7 || true
-          # Cria branch novo
           git checkout -b plugin-migration-v7
         env:
           CAP_GH_RELEASE_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}

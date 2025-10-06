@@ -42,7 +42,7 @@ jobs:
           git checkout -b plugin-migration-v7
         env:
           CAP_GH_RELEASE_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
-
+          
       - name: Commit plugin changes
         run: |
           git add .

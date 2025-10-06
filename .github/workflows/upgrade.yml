@@ -32,10 +32,24 @@ jobs:
         run: pnpm install --no-frozen-lockfile
         working-directory: .
 
+     
+      
+      - name: Debug plugin build
+        working-directory: plugin
+        run: |
+          echo "Listing plugin contents..."
+          ls -la
+          echo "Node version:"
+          node -v
+          echo "PNPM version:"
+          pnpm -v
+          echo "Running build manually to show full logs..."
+          pnpm run build --reporter ndjson --stream
+
       - name: Build project
         run: pnpm run build
         working-directory: .
-
+      
       - name: Build Android
         working-directory: plugin/android
         run: ./gradlew clean build

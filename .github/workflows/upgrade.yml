@@ -17,6 +17,15 @@ jobs:
       - name: Setup Tools
         uses: ./.github/actions/setup-tools
 
+      - name: List installed Java versions
+        run: /usr/libexec/java_home -V
+
+      - name: Set Java 17
+        run: |
+          export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+          echo "JAVA_HOME=$JAVA_HOME" >> $GITHUB_ENV
+          java -version
+
       - name: Verify Java version
         run: java -version
 
@@ -32,23 +41,13 @@ jobs:
         run: pnpm install --no-frozen-lockfile
         working-directory: .
 
-     
-      
-      - name: Debug plugin build
-        working-directory: plugin
-        run: |
-          echo "Listing plugin contents..."
-          ls -la
-          echo "Node version:"
-          node -v
-          echo "PNPM version:"
-          pnpm -v
-          echo "Running build manually to show full logs..."
-          pnpm run build --reporter ndjson --stream
-
       - name: Build project
         run: pnpm run build
         working-directory: .
+
+      - name: Plugin build
+        working-directory: plugin
+        run: pnpm run build
       
       - name: Build Android
         working-directory: plugin/android

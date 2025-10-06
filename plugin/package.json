@@ -1,6 +1,6 @@
 {
   "name": "@capacitor/barcode-scanner",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Capacitor plugin using Outsystems Barcode libs",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](/compare/v2.1.0...v2.2.0) (2025-10-06)
+
+
+### Bug Fixes
+
+* **android:** Fix intermittent crash due to `lateinit var` (#92) 839328f, closes #92
+
+
+### Features
+
+* **ios:** add support for spm (#91) f8b8645, closes #91
+
+
+
+
+
 # [2.1.0](/compare/v2.0.4...v2.1.0) (2025-09-09)
 
 

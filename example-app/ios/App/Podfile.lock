@@ -1,7 +1,7 @@
 PODS:
   - Capacitor (7.4.3):
     - CapacitorCordova
-  - CapacitorBarcodeScanner (2.0.4):
+  - CapacitorBarcodeScanner (2.1.0):
     - Capacitor
     - OSBarcodeLib (= 2.0.1)
   - CapacitorCordova (7.4.3)
@@ -26,7 +26,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Capacitor: b4741ca7affb32c1b70debd03df92cbf522d8a80
-  CapacitorBarcodeScanner: b8a3d4ed0a0d2ed2cd78a16b76737cacbf8da207
+  CapacitorBarcodeScanner: 232a70f30fc1fbb62f05c9c30765e8aa193d82c0
   CapacitorCordova: 435121e81a2df4d0034f0fb11fcefab5104cfdb5
   OSBarcodeLib: 57987d2eb1f916f701f4554e20e349b3cb83f023
 

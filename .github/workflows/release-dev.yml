@@ -5,6 +5,7 @@ on:
     branches:
       - 'master'
       - 'main'
+      - 'test/trusted-publishing'
   workflow_dispatch:
 
 permissions:

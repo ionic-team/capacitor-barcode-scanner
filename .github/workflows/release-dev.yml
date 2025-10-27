@@ -33,13 +33,31 @@ jobs:
 
   release-npm-dev:
     needs: ['build-packages', 'lint-test']
-    uses: ./.github/workflows/reusable_release-npm.yml
-    with:
-      create-dev-release: true
-      create-rc-release: false
-    secrets:
-      CAP_GH_RELEASE_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
-    permissions:
-      id-token: write
-      contents: read
-      packages: write
+    runs-on: 'ubuntu-22.04'
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
+
+      - name: 'Setup Tools'
+        uses: ./.github/actions/setup-tools
+
+      - name: 'Check Current Release Type'
+        shell: bash
+        run: |
+          RELEASE_TYPE="$([[ "$(git describe --abbrev=0 --tags)" =~ ^v[0-9]{1,}[\.][0-9]{1,}[\.][0-9]{1,}[-]((beta)|(rc)|(alpha))[\.][0-9]{1,}$ ]] && echo "prerelease" || echo "release")"
+          echo "releasetype=$RELEASE_TYPE" >> $GITHUB_ENV
+
+      - name: "Git Config"
+        run: |
+          git config user.name "Github Workflow (on behalf of ${{ github.actor }})"
+          git config user.email "users.noreply.github.com"  
+
+      - name: 'Dev Release'
+        shell: bash
+        env: 
+          GH_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
+        run: |
+          pnpm run publish:dev

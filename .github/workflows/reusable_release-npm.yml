@@ -14,8 +14,6 @@ on:
     secrets:
       CAP_GH_RELEASE_TOKEN:
         required: true
-      NPM_TOKEN:
-        required: true
 
 jobs:
   build:
@@ -35,11 +33,6 @@ jobs:
         run: |
           RELEASE_TYPE="$([[ "$(git describe --abbrev=0 --tags)" =~ ^v[0-9]{1,}[\.][0-9]{1,}[\.][0-9]{1,}[-]((beta)|(rc)|(alpha))[\.][0-9]{1,}$ ]] && echo "prerelease" || echo "release")"
           echo "releasetype=$RELEASE_TYPE" >> $GITHUB_ENV
-      
-      - name: "NPM Identity"
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
-          npm whoami
           
       - name: "Git Config"
         run: |
@@ -50,7 +43,6 @@ jobs:
         if: inputs.create-dev-release
         shell: bash
         env: 
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
         run: |
           pnpm run publish:dev
@@ -59,7 +51,6 @@ jobs:
         if: "!inputs.create-dev-release && inputs.create-rc-release"
         shell: bash
         env: 
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
         run: |
           pnpm run publish:rc
@@ -68,7 +59,6 @@ jobs:
         if: ${{ !inputs.create-dev-release && !inputs.create-rc-release && env.releasetype == 'prerelease' }}
         shell: bash
         env: 
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
         run: |
           pnpm run publish:release-from-prerelease
@@ -77,7 +67,6 @@ jobs:
         if: ${{ !inputs.create-dev-release && !inputs.create-rc-release && env.releasetype == 'release' }}
         shell: bash
         env: 
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
         run: |
           pnpm run publish:latest

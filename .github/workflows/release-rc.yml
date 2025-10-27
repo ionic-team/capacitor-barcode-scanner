@@ -2,6 +2,10 @@ name: "Release RC"
 
 on: workflow_dispatch
 
+permissions:
+  id-token: write  # Required for OIDC for trusted publishing
+  contents: read
+
 jobs:
   setup:
     uses: ./.github/workflows/reusable_setup.yml
@@ -28,4 +32,3 @@ jobs:
       create-rc-release: true
     secrets:
       CAP_GH_RELEASE_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
-      NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

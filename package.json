@@ -14,7 +14,7 @@
   "devDependencies": {
     "@types/node": "^20.11.25",
     "husky": "^9.0.1",
-    "lerna": "^8.1.2",
+    "lerna": "^9.0.0",
     "typescript": "^5.4.2"
   },
   "engines": {

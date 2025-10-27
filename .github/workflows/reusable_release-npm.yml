@@ -39,12 +39,6 @@ jobs:
           RELEASE_TYPE="$([[ "$(git describe --abbrev=0 --tags)" =~ ^v[0-9]{1,}[\.][0-9]{1,}[\.][0-9]{1,}[-]((beta)|(rc)|(alpha))[\.][0-9]{1,}$ ]] && echo "prerelease" || echo "release")"
           echo "releasetype=$RELEASE_TYPE" >> $GITHUB_ENV
 
-      - name: "NPM Identity"
-        run: |
-          npm whoami
-          npm config get registry
-          npm publish --dry-run
-
       - name: "Git Config"
         run: |
           git config user.name "Github Workflow (on behalf of ${{ github.actor }})"

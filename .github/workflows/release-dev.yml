@@ -11,6 +11,7 @@ on:
 permissions:
   id-token: write  # Required for OIDC for trusted publishing
   contents: read
+  packages: write
 
 jobs:
   setup:
@@ -41,3 +42,4 @@ jobs:
     permissions:
       id-token: write
       contents: read
+      packages: write

@@ -38,3 +38,6 @@ jobs:
       create-rc-release: false
     secrets:
       CAP_GH_RELEASE_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
+    permissions:
+      id-token: write
+      contents: read

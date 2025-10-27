@@ -15,6 +15,10 @@ on:
       CAP_GH_RELEASE_TOKEN:
         required: true
 
+permissions:
+  id-token: write  # Required for OIDC for trusted publishing
+  contents: read
+
 jobs:
   build:
     runs-on: 'ubuntu-22.04'

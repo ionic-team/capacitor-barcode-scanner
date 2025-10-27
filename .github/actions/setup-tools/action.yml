@@ -13,7 +13,7 @@ runs:
     - name: Install Node.js
       uses: actions/setup-node@v6
       with:
-        node-version: 24
+        node-version: 22
 
     - name: Update npm # To ensure npm 11.5.1 or later is installed for Trusted publishing
       shell: bash
@@ -23,7 +23,7 @@ runs:
       uses: pnpm/action-setup@v3
       id: pnpm-install
       with:
-        version: 10
+        version: 8
         run_install: false
 
     - name: Get pnpm store directory

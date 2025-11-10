@@ -24,8 +24,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    namespace "com.capacitorjs.barcodescanner"
-    compileSdk project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 36
+    namespace = "com.capacitorjs.barcodescanner"
+    compileSdk = project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 35
     defaultConfig {
         minSdkVersion project.hasProperty('minSdkVersion') ? rootProject.ext.minSdkVersion : 26
         targetSdkVersion project.hasProperty('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 36
@@ -40,7 +40,7 @@ android {
         }
     }
     lintOptions {
-        abortOnError false
+        abortOnError = false
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_21

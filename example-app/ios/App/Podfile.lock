@@ -1,16 +1,16 @@
 PODS:
-  - Capacitor (7.4.3):
+  - Capacitor (8.0.0-beta.0):
     - CapacitorCordova
-  - CapacitorBarcodeScanner (2.1.0):
+  - CapacitorBarcodeScanner (2.2.0):
     - Capacitor
     - OSBarcodeLib (= 2.0.1)
-  - CapacitorCordova (7.4.3)
+  - CapacitorCordova (8.0.0-beta.0)
   - OSBarcodeLib (2.0.1)
 
 DEPENDENCIES:
-  - "Capacitor (from `../../../node_modules/.pnpm/@capacitor+ios@7.4.3_@capacitor+core@7.4.3/node_modules/@capacitor/ios`)"
+  - "Capacitor (from `../../../node_modules/.pnpm/@capacitor+ios@8.0.0-beta.0_@capacitor+core@8.0.0-beta.0/node_modules/@capacitor/ios`)"
   - CapacitorBarcodeScanner (from `../../../plugin`)
-  - "CapacitorCordova (from `../../../node_modules/.pnpm/@capacitor+ios@7.4.3_@capacitor+core@7.4.3/node_modules/@capacitor/ios`)"
+  - "CapacitorCordova (from `../../../node_modules/.pnpm/@capacitor+ios@8.0.0-beta.0_@capacitor+core@8.0.0-beta.0/node_modules/@capacitor/ios`)"
 
 SPEC REPOS:
   trunk:
@@ -18,18 +18,18 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Capacitor:
-    :path: "../../../node_modules/.pnpm/@capacitor+ios@7.4.3_@capacitor+core@7.4.3/node_modules/@capacitor/ios"
+    :path: "../../../node_modules/.pnpm/@capacitor+ios@8.0.0-beta.0_@capacitor+core@8.0.0-beta.0/node_modules/@capacitor/ios"
   CapacitorBarcodeScanner:
     :path: "../../../plugin"
   CapacitorCordova:
-    :path: "../../../node_modules/.pnpm/@capacitor+ios@7.4.3_@capacitor+core@7.4.3/node_modules/@capacitor/ios"
+    :path: "../../../node_modules/.pnpm/@capacitor+ios@8.0.0-beta.0_@capacitor+core@8.0.0-beta.0/node_modules/@capacitor/ios"
 
 SPEC CHECKSUMS:
-  Capacitor: b4741ca7affb32c1b70debd03df92cbf522d8a80
-  CapacitorBarcodeScanner: 232a70f30fc1fbb62f05c9c30765e8aa193d82c0
-  CapacitorCordova: 435121e81a2df4d0034f0fb11fcefab5104cfdb5
+  Capacitor: cdbe01d8f7b542b2750fb51e88051e764b3cbc4e
+  CapacitorBarcodeScanner: 8de3b13b681ff3b92e21b286e9847ee525f44796
+  CapacitorCordova: 65a0b71358d76bdeb799f45cd0214d68fbe2fd56
   OSBarcodeLib: 57987d2eb1f916f701f4554e20e349b3cb83f023
 
-PODFILE CHECKSUM: fdf735c62a9097dffa919e728a30c55c44e3a7f6
+PODFILE CHECKSUM: 4866a8bb908c1d799268ad9313d2a1aaab6530e6
 
 COCOAPODS: 1.16.2

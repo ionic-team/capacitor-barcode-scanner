@@ -53,10 +53,10 @@
     "html5-qrcode": "2.3.8"
   },
   "devDependencies": {
-    "@capacitor/android": "^7.0.0",
-    "@capacitor/core": "^7.0.0",
+    "@capacitor/android": "next",
+    "@capacitor/core": "next",
     "@capacitor/docgen": "^0.2.2",
-    "@capacitor/ios": "^7.0.0",
+    "@capacitor/ios": "next",
     "@ionic/swiftlint-config": "^1.1.2",
     "@types/node": "~20.12.4",
     "@typescript-eslint/eslint-plugin": "^5.59.2",
@@ -71,7 +71,7 @@
     "typescript": "~5.7.2"
   },
   "peerDependencies": {
-    "@capacitor/core": ">=7.0.0"
+    "@capacitor/core": "next"
   },
   "swiftlint": "@ionic/swiftlint-config",
   "capacitor": {

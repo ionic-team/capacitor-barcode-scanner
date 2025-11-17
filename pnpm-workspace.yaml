@@ -1,3 +1,4 @@
 packages:
   - 'plugin'
   - 'example-app'
+  - 'example-app-spm'

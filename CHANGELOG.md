@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v2.1.0...v2.2.0) (2025-10-06)
+
+
+### Bug Fixes
+
+* **android:** Fix intermittent crash due to `lateinit var` ([#92](https://github.com/ionic-team/capacitor-barcode-scanner/issues/92)) ([839328f](https://github.com/ionic-team/capacitor-barcode-scanner/commit/839328fd5234bef6ff1b6077ec7cfece3af01de9))
+
+
+### Features
+
+* **ios:** add support for spm ([#91](https://github.com/ionic-team/capacitor-barcode-scanner/issues/91)) ([f8b8645](https://github.com/ionic-team/capacitor-barcode-scanner/commit/f8b864556a1485e14b0d84aa5e9e02695ae2356c))
+
+
+
+
+
 # [2.1.0](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v2.0.4...v2.1.0) (2025-09-09)
 
 

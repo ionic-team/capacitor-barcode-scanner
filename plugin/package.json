@@ -1,6 +1,6 @@
 {
   "name": "@capacitor/barcode-scanner",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Capacitor plugin using Outsystems Barcode libs",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -10,9 +10,11 @@
     "android/src/main/",
     "android/build.gradle",
     "dist/",
-    "ios/Plugin/",
     "CapacitorBarcodeScanner.podspec",
-    "scripts/"
+    "scripts/",
+    "ios/Sources",
+    "ios/Tests",
+    "Package.swift"
   ],
   "author": "OutSystems",
   "license": "MIT",
@@ -34,7 +36,7 @@
   },
   "scripts": {
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
-    "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin -destination generic/platform=iOS && cd ..",
+    "verify:ios": "xcodebuild -scheme CapacitorBarcodeScanner -destination generic/platform=iOS",
     "verify:android": "cd android && ./gradlew clean build test && cd ..",
     "verify:web": "npm run build",
     "lint": "npm run eslint && npm run prettier -- --check && npm run swiftlint -- lint",
@@ -52,10 +54,10 @@
     "html5-qrcode": "2.3.8"
   },
   "devDependencies": {
-    "@capacitor/android": "^7.0.0",
-    "@capacitor/core": "^7.0.0",
+    "@capacitor/android": "next",
+    "@capacitor/core": "next",
     "@capacitor/docgen": "^0.2.2",
-    "@capacitor/ios": "^7.0.0",
+    "@capacitor/ios": "next",
     "@ionic/swiftlint-config": "^1.1.2",
     "@types/node": "~20.12.4",
     "@typescript-eslint/eslint-plugin": "^5.59.2",
@@ -70,7 +72,7 @@
     "typescript": "~5.7.2"
   },
   "peerDependencies": {
-    "@capacitor/core": ">=7.0.0"
+    "@capacitor/core": "next"
   },
   "swiftlint": "@ionic/swiftlint-config",
   "capacitor": {

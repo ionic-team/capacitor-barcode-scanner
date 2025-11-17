@@ -7,6 +7,7 @@ Pods
 Podfile.lock
 Build
 xcuserdata
+/.build
 
 # macOS files
 .DS_Store
@@ -61,3 +62,11 @@ captures
 .externalNativeBuild
 
 *.tgz
+
+/Packages
+xcuserdata/
+DerivedData/
+.swiftpm/configuration/registries.json
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+.netrc
+Package.resolved

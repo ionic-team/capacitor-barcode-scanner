@@ -1,7 +1,7 @@
 {
   "name": "example-app",
   "private": true,
-  "version": "2.1.0",
+  "version": "2.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,10 +12,10 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@capacitor/android": "^7.0.0",
-    "@capacitor/barcode-scanner": "workspace:*",
-    "@capacitor/core": "^7.0.0",
-    "@capacitor/ios": "^7.0.0",
+    "@capacitor/android": "next",
+    "@capacitor/barcode-scanner": "file:../plugin/",
+    "@capacitor/core": "next",
+    "@capacitor/ios": "next",
     "@ionic/react": "^8.7.0",
     "@ionic/react-router": "^8.7.0",
     "@types/react-router": "^5.1.20",
@@ -27,7 +27,7 @@
     "react-router-dom": "^5.3.4"
   },
   "devDependencies": {
-    "@capacitor/cli": "^7.0.0",
+    "@capacitor/cli": "next",
     "@testing-library/dom": ">=7.21.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",

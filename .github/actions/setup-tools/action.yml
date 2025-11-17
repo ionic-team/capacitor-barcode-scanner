@@ -11,9 +11,9 @@ runs:
   using: 'composite'
   steps:
     - name: Install Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v6
       with:
-        node-version: 20
+        node-version: 22
 
     - name: Install PNPM
       uses: pnpm/action-setup@v3
@@ -30,7 +30,7 @@ runs:
 
     - name: Setup PNPM cache
       id: cache-pnpm-store
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       env:
         STORE_PATH: ${{ env.STORE_PATH }}
       with:

@@ -23,7 +23,7 @@ jobs:
     runs-on: 'macos-14'
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: 'Setup Tools'
         uses: ./.github/actions/setup-tools
       - name: 'Verify iOS + Android + Web'
@@ -35,7 +35,7 @@ jobs:
     runs-on: 'macos-14'
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: 'Setup Tools'
         uses: ./.github/actions/setup-tools
       - name: 'Build plugin'

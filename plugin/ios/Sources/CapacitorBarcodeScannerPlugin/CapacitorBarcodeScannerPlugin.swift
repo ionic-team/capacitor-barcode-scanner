@@ -5,11 +5,11 @@ import OSBarcodeLib
 
 @objc(CapacitorBarcodeScannerPlugin)
 public class CapacitorBarcodeScannerPlugin: CAPPlugin, CAPBridgedPlugin {
-    public let identifier = "CapacitorBarcodeScannerPlugin" 
-    public let jsName = "CapacitorBarcodeScanner" 
+    public let identifier = "CapacitorBarcodeScannerPlugin"
+    public let jsName = "CapacitorBarcodeScanner"
     public let pluginMethods: [CAPPluginMethod] = [
-        CAPPluginMethod(name: "scanBarcode", returnType: CAPPluginReturnPromise),
-    ] 
+        CAPPluginMethod(name: "scanBarcode", returnType: CAPPluginReturnPromise)
+    ]
     var manager: OSBARCManagerProtocol?
 
     override public func load() {

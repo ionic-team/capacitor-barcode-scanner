@@ -3,18 +3,21 @@
  * Each object in the array defines a CSS rule, with a selector and the CSS properties to apply.
  */
 export const barcodeScannerCss = [
-  { selector: '.scanner-container-display', css: 'display: block;' },
+  { selector: ".scanner-container-display", css: "display: block;" },
   {
-    selector: '.scanner-dialog',
-    css: 'display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);',
+    selector: ".scanner-dialog",
+    css: "display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);",
   },
   {
-    selector: '.scanner-dialog-inner',
-    css: 'background-color: #fefefe; margin: 2% auto; padding: 20px; border: 1px solid #888; width: 96%;',
+    selector: ".scanner-dialog-inner",
+    css: "background-color: #fefefe; margin: 2% auto; padding: 20px; border: 1px solid #888; width: 96%;",
   },
-  { selector: '.close-button', css: 'color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;' },
-  { selector: '.close-button:hover', css: 'color: #222;' },
-  { selector: '.scanner-container-full-width', css: 'width: 100%;' },
+  {
+    selector: ".close-button",
+    css: "color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;",
+  },
+  { selector: ".close-button:hover", css: "color: #222;" },
+  { selector: ".scanner-container-full-width", css: "width: 100%;" },
 ];
 
 /**
@@ -26,12 +29,14 @@ export const barcodeScannerCss = [
  * @param {Array<{selector: string, css: string}>} cssRules - An array of objects containing CSS selectors and styles to apply.
  */
 export function applyCss(cssRules: { selector: string; css: string }[]): void {
-  const styleId = 'custom-style-os-cap-barcode'; // Unique identifier for the style element.
-  let styleElement = document.getElementById(styleId) as HTMLStyleElement | null;
+  const styleId = "custom-style-os-cap-barcode"; // Unique identifier for the style element.
+  let styleElement = document.getElementById(
+    styleId,
+  ) as HTMLStyleElement | null;
   if (!styleElement) {
     // Create and append a new style element if it does not exist.
-    styleElement = document.createElement('style');
-    styleElement.type = 'text/css';
+    styleElement = document.createElement("style");
+    styleElement.type = "text/css";
     styleElement.id = styleId;
     document.head.appendChild(styleElement);
   }
@@ -46,7 +51,7 @@ export function applyCss(cssRules: { selector: string; css: string }[]): void {
     }
   } else {
     // Fallback for older browsers using textContent.
-    styleElement.textContent = '';
+    styleElement.textContent = "";
     for (const { selector, css } of cssRules) {
       styleElement.textContent += `${selector} { ${css} }`;
     }

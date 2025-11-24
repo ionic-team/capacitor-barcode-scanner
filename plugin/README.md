@@ -45,6 +45,8 @@ Note: iOS supports all formats except `MAXICODE` and `UPC_EAN_EXTENSION` - using
 Interface defining the contract for a plugin capable of scanning barcodes.
 Requires implementation of the scanBarcode method, which initiates a barcode scan with given options.
 
+For apps that target Android 16 or above running on tablets, the scanOrientation parameter has no effect.
+
 ### scanBarcode(...)
 
 ```typescript

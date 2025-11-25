@@ -77,7 +77,7 @@ export type CapacitorBarcodeScannerOptions = {
 /**
  * Interface defining the contract for a plugin capable of scanning barcodes.
  * Requires implementation of the scanBarcode method, which initiates a barcode scan with given options.
- * 
+ *
  * For apps that target Android 16 or above running on tablets, the scanOrientation parameter has no effect.
  */
 export interface CapacitorBarcodeScannerPlugin {

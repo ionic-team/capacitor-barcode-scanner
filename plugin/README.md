@@ -147,7 +147,7 @@ Defines the options for configuring a barcode scan.
 
 | Members     | Value                |
 | ----------- | -------------------- |
-| **`ZXING`** | <code>'zxing'</code> |
-| **`MLKIT`** | <code>'mlkit'</code> |
+| **`ZXING`** | <code>"zxing"</code> |
+| **`MLKIT`** | <code>"mlkit"</code> |
 
 </docgen-api>

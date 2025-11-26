@@ -1,4 +1,4 @@
-import { Html5QrcodeSupportedFormats } from 'html5-qrcode';
+import { Html5QrcodeSupportedFormats } from "html5-qrcode";
 
 /**
  * Enum representing the direction of the camera to be used for barcode scanning.
@@ -37,14 +37,17 @@ export const CapacitorBarcodeScannerTypeHint = {
  * Type definition combining Html5QrcodeSupportedFormats and OSBarcodeTypeHintALLOption
  * to represent the hint for the type of barcode to be scanned.
  */
-export type CapacitorBarcodeScannerTypeHint = Html5QrcodeSupportedFormats | CapacitorBarcodeScannerTypeHintALLOption;
+
+export type CapacitorBarcodeScannerTypeHint =
+  | Html5QrcodeSupportedFormats
+  | CapacitorBarcodeScannerTypeHintALLOption;
 
 /**
  * Enum representing the library to be used for barcode scanning on Android devices.
  */
 export enum CapacitorBarcodeScannerAndroidScanningLibrary {
-  ZXING = 'zxing',
-  MLKIT = 'mlkit',
+  ZXING = "zxing",
+  MLKIT = "mlkit",
 }
 
 /**
@@ -86,5 +89,7 @@ export type CapacitorBarcodeScannerOptions = {
  *
  */
 export interface CapacitorBarcodeScannerPlugin {
-  scanBarcode(options: CapacitorBarcodeScannerOptions): Promise<CapacitorBarcodeScannerScanResult>;
+  scanBarcode(
+    options: CapacitorBarcodeScannerOptions,
+  ): Promise<CapacitorBarcodeScannerScanResult>;
 }

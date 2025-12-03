@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@capacitor/barcode-scanner": "file:../plugin/",
-    "@capacitor/core": "8.0.0-beta.0",
-    "@capacitor/ios": "8.0.0-beta.0",
+    "@capacitor/core": "^8.0.0",
+    "@capacitor/ios": "^8.0.0",
     "@ionic/react": "^8.7.9",
     "@ionic/react-router": "^8.7.9",
     "ionicons": "^8.0.13",
@@ -24,7 +24,7 @@
     "react-router-dom": "^5.3.4"
   },
   "devDependencies": {
-    "@capacitor/cli": "8.0.0-beta.0",
+    "@capacitor/cli": "^8.0.0",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",

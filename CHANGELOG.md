@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v2.2.0...v3.0.0) (2025-12-09)
+
+### ⚠ BREAKING CHANGES
+
+* Updated to support Capacitor 8
+* Minimum Android SDK version increased to align with Capacitor 8 requirements
+* Minimum iOS deployment target increased to align with Capacitor 8 requirements
+
+### Features
+
+* Add support for Capacitor 8
+
 ## [2.2.1](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v2.2.0...v2.2.1) (2025-12-09)
 
 **Note:** Version bump only for package root

@@ -20,7 +20,7 @@ jobs:
 
   verify-plugin:
     needs: ['setup', 'lint-test', 'build-packages']
-    runs-on: 'macos-14'
+    runs-on: 'macos-latest'
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5
@@ -32,7 +32,7 @@ jobs:
 
   build-example-app:
     needs: ['verify-plugin']
-    runs-on: 'macos-14'
+    runs-on: 'macos-latest'
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5

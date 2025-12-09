@@ -20,7 +20,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+github.com/ionic-team/capacitor-barcode-scanner.git"
+    "url": "git+https://github.com/ionic-team/capacitor-barcode-scanner.git"
   },
   "bugs": {
     "url": "https://github.com/ionic-team/capacitor-barcode-scanner/issues"

@@ -1,7 +1,7 @@
 {
   "name": "example-app-spm",
   "private": true,
-  "version": "2.2.1",
+  "version": "3.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",

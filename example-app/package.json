@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@capacitor/android": "^8.0.0",
-    "@capacitor/barcode-scanner": "file:../plugin/",
+    "@capacitor/barcode-scanner": "workspace:*",
     "@capacitor/core": "^8.0.0",
     "@capacitor/ios": "^8.0.0",
     "@ionic/react": "^8.7.9",

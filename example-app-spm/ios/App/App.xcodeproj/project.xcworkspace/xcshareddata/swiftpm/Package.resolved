@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/OutSystems/OSBarcodeLib-iOS.git",
       "state" : {
-        "revision" : "fa51b49cf43ee227b02b371db83c8cb2e2cf8b55",
-        "version" : "2.1.0"
+        "branch" : "RMET-4952",
+        "revision" : "e6f8e4e88995a5e657480289670bec7ea876c954"
       }
     }
   ],

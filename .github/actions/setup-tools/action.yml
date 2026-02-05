@@ -16,10 +16,10 @@ runs:
         node-version: 22
 
     - name: Install PNPM
-      uses: pnpm/action-setup@v3
+      uses: pnpm/action-setup@v4
       id: pnpm-install
       with:
-        version: 8
+        version: 10
         run_install: false
 
     - name: Get pnpm store directory

@@ -45,6 +45,12 @@ Note: iOS supports all formats except `MAXICODE` and `UPC_EAN_EXTENSION` - using
 Interface defining the contract for a plugin capable of scanning barcodes.
 Requires implementation of the scanBarcode method, which initiates a barcode scan with given options.
 
+Starting in Android targetSdk 36, the scanOrientation parameter has no effect for large screens (e.g. tablets) on Android 16 and higher.
+You may opt-out of this behavior in your app by adding `<property android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY" android:value="true" />` to your `AndroidManifest.xml` inside `<application>` or `<activity>`.
+Keep in mind though that this opt-out is temporary and will no longer work for Android 17. Android discourages setting specific orientations for large screens.
+Regular Android phones are unaffected by this change.
+For more information check the Android docs at https://developer.android.com/about/versions/16/behavior-changes-16#adaptive-layouts
+
 ### scanBarcode(...)
 
 ```typescript
@@ -141,7 +147,7 @@ Defines the options for configuring a barcode scan.
 
 | Members     | Value                |
 | ----------- | -------------------- |
-| **`ZXING`** | <code>'zxing'</code> |
-| **`MLKIT`** | <code>'mlkit'</code> |
+| **`ZXING`** | <code>"zxing"</code> |
+| **`MLKIT`** | <code>"mlkit"</code> |
 
 </docgen-api>

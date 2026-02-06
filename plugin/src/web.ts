@@ -52,6 +52,7 @@ export class CapacitorBarcodeScannerWeb extends WebPlugin implements CapacitorBa
     caposbarcodescannercontainerdialoginner.className = 'scanner-dialog-inner';
 
     const caposbarcodescannercontainerdialoginnerclose = document.createElement('span');
+    caposbarcodescannercontainerdialoginnerclose.id = 'cap-os-barcode-scanner-close-button';
     caposbarcodescannercontainerdialoginnerclose.className = 'close-button';
     caposbarcodescannercontainerdialoginnerclose.innerHTML = '&times;';
     caposbarcodescannercontainerdialoginner.appendChild(caposbarcodescannercontainerdialoginnerclose);
@@ -67,8 +68,6 @@ export class CapacitorBarcodeScannerWeb extends WebPlugin implements CapacitorBa
 
     caposbarcodescannercontainerdialog.appendChild(caposbarcodescannercontainerdialoginner);
     caposbarcodescannercontainer.appendChild(caposbarcodescannercontainerdialog);
-
-    caposbarcodescannercontainerdialoginnerclose.onclick = this.stopAndHideScanner;
   }
 
   /**
@@ -95,6 +94,17 @@ export class CapacitorBarcodeScannerWeb extends WebPlugin implements CapacitorBa
         typeHint: options.hint === 17 ? undefined : options.hint,
         scannerFPS: options.web?.scannerFPS ? options.web.scannerFPS : 50,
       };
+
+      let alreadyCancelled = false;
+      const closeButton = document.getElementById('cap-os-barcode-scanner-close-button');
+      if (closeButton) {
+        closeButton.onclick = async () => {
+          if (alreadyCancelled) return;
+          alreadyCancelled = true;
+          await this.stopAndHideScanner();
+          reject(new Error('Couldn’t scan because the process was cancelled.'));
+        };
+      }
 
       // Set up and start the scanner
       const scannerElement = document.getElementById('cap-os-barcode-scanner-container-scanner');

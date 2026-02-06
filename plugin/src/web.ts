@@ -140,7 +140,6 @@ export class CapacitorBarcodeScannerWeb
       );
       if (closeButton) {
         closeButton.onclick = async () => {
-        
           if (alreadyCancelled) return;
           alreadyCancelled = true;
           await this.stopAndHideScanner();

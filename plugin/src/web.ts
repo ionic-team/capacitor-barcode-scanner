@@ -97,7 +97,6 @@ export class CapacitorBarcodeScannerWeb
     caposbarcodescannercontainer.appendChild(
       caposbarcodescannercontainerdialog,
     );
-
   }
 
   /**

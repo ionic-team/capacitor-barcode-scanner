@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.6](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v2.2.5...v2.2.6) (2026-02-11)
+
+
+### Bug Fixes
+
+* **android:** AGP 9.0 no longer supports `proguard-android.txt` ([#110](https://github.com/ionic-team/capacitor-barcode-scanner/issues/110)) ([c20f446](https://github.com/ionic-team/capacitor-barcode-scanner/commit/c20f446425eda482c57036afe6afb26f46467cbb))
+
+
+
+
+
 ## [2.2.5](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v2.2.4...v2.2.5) (2026-02-11)
 
 

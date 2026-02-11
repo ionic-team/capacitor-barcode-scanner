@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.5](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v2.2.4...v2.2.5) (2026-02-11)
+
+
+### Bug Fixes
+
+* **ios:** Missing image resources with SPM ([#109](https://github.com/ionic-team/capacitor-barcode-scanner/issues/109)) ([7e72aa3](https://github.com/ionic-team/capacitor-barcode-scanner/commit/7e72aa3a32605df18c3f45eb0e2c4fa0cb71fa81)), closes [#115](https://github.com/ionic-team/capacitor-barcode-scanner/issues/115)
+* **web:** Close button not resolving promise ([#116](https://github.com/ionic-team/capacitor-barcode-scanner/issues/116)) ([ec87646](https://github.com/ionic-team/capacitor-barcode-scanner/commit/ec87646cd17e27fddda591fed7eecbb37e6971a9))
+
+
+
+
+
 ## [2.2.4](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v2.2.3...v2.2.4) (2025-12-16)
 
 **Note:** Version bump only for package root

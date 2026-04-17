@@ -43,3 +43,8 @@ runs:
       if: inputs.skip-install-on-cache-hit == 'false' || (inputs.skip-install-on-cache-hit == 'true' && steps.cache-pnpm-store.cache-hit == 'false')
       shell: bash
       run: pnpm install
+    
+    - name: Set Xcode 26.0  # minimum support Xcode version by Capacitor 8
+      if: runner.os == 'macOS'
+      shell: bash
+      run: sudo xcode-select --switch /Applications/Xcode_26.0.app

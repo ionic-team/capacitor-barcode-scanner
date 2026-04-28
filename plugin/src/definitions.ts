@@ -62,7 +62,8 @@ export type CapacitorBarcodeScannerScanResult = {
  * Defines the options for configuring a barcode scan.
  */
 export type CapacitorBarcodeScannerOptions = {
-  hint: CapacitorBarcodeScannerTypeHint;
+  hint?: CapacitorBarcodeScannerTypeHint;
+  hints?: CapacitorBarcodeScannerTypeHint[];
   scanInstructions?: string;
   scanButton?: boolean;
   scanText?: string;

@@ -33,6 +33,10 @@ class CapacitorBarcodeScannerPlugin : Plugin() {
         val hint: OSBARCScannerHint? = call.getInt("hint")?.let {
             OSBARCScannerHint.entries.getOrNull(it)
         }
+        val hints: List<OSBARCScannerHint>? = call.getArray("hints")
+            ?.toList<Int>()
+            ?.mapNotNull { OSBARCScannerHint.entries.getOrNull(it) }
+            ?.ifEmpty { null }
         val scanInstructions = call.getString("scanInstructions")
         val scanButton = call.getBoolean("scanButton", false) ?: false
         val scanText = call.getString("scanText", "") ?: ""
@@ -47,7 +51,8 @@ class CapacitorBarcodeScannerPlugin : Plugin() {
                 scanButton = scanButton,
                 scanText = scanText,
                 hint = hint,
-                androidScanningLibrary = androidScanningLibrary
+                androidScanningLibrary = androidScanningLibrary,
+                hints = hints
         )
 
         val scanIntent = Intent(activity, OSBARCScannerActivity::class.java)

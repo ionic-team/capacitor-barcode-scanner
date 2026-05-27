@@ -1,4 +1,7 @@
 packages:
-  - 'plugin'
-  - 'example-app'
-  - 'example-app-spm'
+  - plugin
+  - example-app
+  - example-app-spm
+
+overrides:
+  tmp@<0.2.6: '>=0.2.6'

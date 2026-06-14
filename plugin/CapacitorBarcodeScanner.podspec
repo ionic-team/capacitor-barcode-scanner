@@ -13,6 +13,8 @@ Pod::Spec.new do |s|
   s.source_files = 'ios/Sources/**/*.{swift,h,m,c,cc,mm,cpp}'
   s.ios.deployment_target  = '15.0'
   s.dependency 'Capacitor'
-  s.dependency 'OSBarcodeLib', '2.0.1'
+  # LOCAL TESTING ONLY: version pin removed so the local OSBarcodeLib pod (overridden via the
+  # example app's Podfile :path) satisfies the dependency. Restore '2.0.1' before publishing.
+  s.dependency 'OSBarcodeLib'
   s.swift_version = '5.1'
 end

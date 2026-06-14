@@ -10,6 +10,9 @@ extension OSBARCScanParameters: Decodable {
         case cameraDirection
         case scanOrientation
         case hint
+        case cancelButtonAccessibilityLabel
+        case torchButtonOnAccessibilityLabel
+        case torchButtonOffAccessibilityLabel
     }
 
     public init(from decoder: Decoder) throws {
@@ -32,12 +35,19 @@ extension OSBARCScanParameters: Decodable {
         let hintInt = try container.decode(Int.self, forKey: .hint)
         let hint = OSBARCScannerHint(rawValue: hintInt)
 
+        let cancelButtonAccessibilityLabel = try container.decodeIfPresent(String.self, forKey: .cancelButtonAccessibilityLabel)
+        let torchButtonOnAccessibilityLabel = try container.decodeIfPresent(String.self, forKey: .torchButtonOnAccessibilityLabel)
+        let torchButtonOffAccessibilityLabel = try container.decodeIfPresent(String.self, forKey: .torchButtonOffAccessibilityLabel)
+
         self.init(
             scanInstructions: scanInstructions,
             scanButtonText: scanButtonText,
             cameraDirection: cameraDirection,
             scanOrientation: scanOrientation,
-            hint: hint
+            hint: hint,
+            cancelButtonAccessibilityLabel: cancelButtonAccessibilityLabel,
+            torchButtonOnAccessibilityLabel: torchButtonOnAccessibilityLabel,
+            torchButtonOffAccessibilityLabel: torchButtonOffAccessibilityLabel
         )
     }
 }

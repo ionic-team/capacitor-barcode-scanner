@@ -9,13 +9,11 @@
   "files": [
     "android/src/main/",
     "android/build.gradle",
-    "android/libs/",
     "dist/",
     "CapacitorBarcodeScanner.podspec",
     "scripts/",
     "ios/Sources",
     "ios/Tests",
-    "ios/Frameworks/",
     "Package.swift"
   ],
   "author": "OutSystems",

@@ -1,4 +1,0 @@
-framework module OSBarcodeLib {
-  header "OSBarcodeLib-Swift.h"
-  requires objc
-}

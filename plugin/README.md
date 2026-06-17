@@ -27,6 +27,21 @@ The barcode scanner uses the camera on the device. Ensure you configure the Priv
 
 Note: iOS supports all formats except `MAXICODE` and `UPC_EAN_EXTENSION` - using them in `hint` will default to scanning any format. Also, Apple Vision does not distinguish between `UPC_A` and `EAN_13`, so specifying one of these in `hint` will allow to scan both.
 
+#### Multi-format scanning with `hints`
+
+Pass `hints` instead of `hint` to restrict scanning to more than one specific format. The decoder is pre-filtered to that set, which is faster than scanning everything and avoids accepting unrelated barcodes that happen to be in frame. When `hints` is non-empty it takes precedence over `hint`, so callers should pass either `hint` (single format) or `hints` (multiple formats), not both:
+
+```ts
+await CapacitorBarcodeScanner.scanBarcode({
+  hints: [
+    CapacitorBarcodeScannerTypeHint.EAN_13,
+    CapacitorBarcodeScannerTypeHint.CODE_128,
+  ],
+});
+```
+
+If `CapacitorBarcodeScannerTypeHintALLOption.ALL` appears anywhere in `hints` the scanner falls back to scan-all behavior. On iOS, when both `UPC_A` and `EAN_13` are present in `hints` the returned `format` defaults to `EAN_13` (Apple Vision cannot distinguish the two).
+
 ---
 
 ## API
@@ -90,7 +105,7 @@ to represent the hint for the type of barcode to be scanned.
 
 Defines the options for configuring a barcode scan.
 
-<code>{ hint: <a href="#capacitorbarcodescannertypehint">CapacitorBarcodeScannerTypeHint</a>; scanInstructions?: string; scanButton?: boolean; scanText?: string; cameraDirection?: <a href="#capacitorbarcodescannercameradirection">CapacitorBarcodeScannerCameraDirection</a>; scanOrientation?: <a href="#capacitorbarcodescannerscanorientation">CapacitorBarcodeScannerScanOrientation</a>; android?: { scanningLibrary?: <a href="#capacitorbarcodescannerandroidscanninglibrary">CapacitorBarcodeScannerAndroidScanningLibrary</a>; }; web?: { showCameraSelection?: boolean; scannerFPS?: number; }; }</code>
+<code>{ hint?: <a href="#capacitorbarcodescannertypehint">CapacitorBarcodeScannerTypeHint</a>; hints?: CapacitorBarcodeScannerTypeHint[]; scanInstructions?: string; scanButton?: boolean; scanText?: string; cameraDirection?: <a href="#capacitorbarcodescannercameradirection">CapacitorBarcodeScannerCameraDirection</a>; scanOrientation?: <a href="#capacitorbarcodescannerscanorientation">CapacitorBarcodeScannerScanOrientation</a>; android?: { scanningLibrary?: <a href="#capacitorbarcodescannerandroidscanninglibrary">CapacitorBarcodeScannerAndroidScanningLibrary</a>; }; web?: { showCameraSelection?: boolean; scannerFPS?: number; }; }</code>
 
 
 ### Enums

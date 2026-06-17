@@ -114,6 +114,19 @@ export class CapacitorBarcodeScannerWeb
       "cap-os-barcode-scanner-container-dialog",
     )!.style.display = "block";
     return new Promise((resolve, reject) => {
+      const ALL = 17;
+      const requestedHints = (
+        options.hints?.length
+          ? options.hints
+          : options.hint !== undefined
+            ? [options.hint]
+            : []
+      ) as number[];
+      const resolvedTypeHints =
+        requestedHints.length === 0 || requestedHints.includes(ALL)
+          ? undefined
+          : requestedHints;
+
       const param = {
         facingMode: options.cameraDirection === 1 ? "environment" : "user",
         hasScannerButton: false,
@@ -129,7 +142,7 @@ export class CapacitorBarcodeScannerWeb
         showCameraSelection: options.web?.showCameraSelection
           ? options.web.showCameraSelection
           : false,
-        typeHint: options.hint === 17 ? undefined : options.hint,
+        typeHints: resolvedTypeHints,
         scannerFPS: options.web?.scannerFPS ? options.web.scannerFPS : 50,
       };
 
@@ -155,8 +168,7 @@ export class CapacitorBarcodeScannerWeb
       }
 
       (window as any).OSBarcodeWebScanner = new Html5Qrcode(scannerElement.id, {
-        formatsToSupport:
-          param.typeHint !== undefined ? [param.typeHint] : undefined,
+        formatsToSupport: param.typeHints,
         verbose: undefined,
       });
       const Html5QrcodeConfig = {

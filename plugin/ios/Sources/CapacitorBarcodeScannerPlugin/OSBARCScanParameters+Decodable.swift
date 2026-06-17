@@ -10,6 +10,7 @@ extension OSBARCScanParameters: Decodable {
         case cameraDirection
         case scanOrientation
         case hint
+        case hints
     }
 
     public init(from decoder: Decoder) throws {
@@ -29,15 +30,19 @@ extension OSBARCScanParameters: Decodable {
         let scanOrientationInt = try container.decode(Int.self, forKey: .scanOrientation)
         let scanOrientation = OSBARCOrientationModel.map(value: scanOrientationInt)
 
-        let hintInt = try container.decode(Int.self, forKey: .hint)
-        let hint = OSBARCScannerHint(rawValue: hintInt)
+        let hintInt = try container.decodeIfPresent(Int.self, forKey: .hint)
+        let hint = hintInt.flatMap { OSBARCScannerHint(rawValue: $0) }
+
+        let hintInts = try container.decodeIfPresent([Int].self, forKey: .hints)
+        let hints = hintInts?.compactMap { OSBARCScannerHint(rawValue: $0) }
 
         self.init(
             scanInstructions: scanInstructions,
             scanButtonText: scanButtonText,
             cameraDirection: cameraDirection,
             scanOrientation: scanOrientation,
-            hint: hint
+            hint: hint,
+            hints: hints
         )
     }
 }

@@ -1,4 +1,3 @@
-/* eslint-env browser */
 import { WebPlugin } from "@capacitor/core";
 import type { Html5QrcodeResult } from "html5-qrcode";
 import { Html5Qrcode } from "html5-qrcode";

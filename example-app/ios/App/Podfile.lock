@@ -1,16 +1,16 @@
 PODS:
-  - Capacitor (8.0.1):
+  - Capacitor (8.0.2):
     - CapacitorCordova
-  - CapacitorBarcodeScanner (3.0.1):
+  - CapacitorBarcodeScanner (3.0.2):
     - Capacitor
     - OSBarcodeLib (= 2.0.1)
-  - CapacitorCordova (8.0.1)
+  - CapacitorCordova (8.0.2)
   - OSBarcodeLib (2.0.1)
 
 DEPENDENCIES:
-  - "Capacitor (from `../../../node_modules/.pnpm/@capacitor+ios@8.0.1_@capacitor+core@8.0.1/node_modules/@capacitor/ios`)"
+  - "Capacitor (from `../../../node_modules/.pnpm/@capacitor+ios@8.0.2_@capacitor+core@8.0.2/node_modules/@capacitor/ios`)"
   - CapacitorBarcodeScanner (from `../../../plugin`)
-  - "CapacitorCordova (from `../../../node_modules/.pnpm/@capacitor+ios@8.0.1_@capacitor+core@8.0.1/node_modules/@capacitor/ios`)"
+  - "CapacitorCordova (from `../../../node_modules/.pnpm/@capacitor+ios@8.0.2_@capacitor+core@8.0.2/node_modules/@capacitor/ios`)"
 
 SPEC REPOS:
   trunk:
@@ -18,18 +18,18 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Capacitor:
-    :path: "../../../node_modules/.pnpm/@capacitor+ios@8.0.1_@capacitor+core@8.0.1/node_modules/@capacitor/ios"
+    :path: "../../../node_modules/.pnpm/@capacitor+ios@8.0.2_@capacitor+core@8.0.2/node_modules/@capacitor/ios"
   CapacitorBarcodeScanner:
     :path: "../../../plugin"
   CapacitorCordova:
-    :path: "../../../node_modules/.pnpm/@capacitor+ios@8.0.1_@capacitor+core@8.0.1/node_modules/@capacitor/ios"
+    :path: "../../../node_modules/.pnpm/@capacitor+ios@8.0.2_@capacitor+core@8.0.2/node_modules/@capacitor/ios"
 
 SPEC CHECKSUMS:
-  Capacitor: ff35b0f66370b84aa238251b35b91886a3207c16
-  CapacitorBarcodeScanner: cbd24d561545a5a1ba7d5f4328a285d347718c52
-  CapacitorCordova: 0d65b9bb74e995dcecb9463f34f1af2aba6f955c
+  Capacitor: 2b79172ad27f3be2d103cce88b8eb9803fdcc744
+  CapacitorBarcodeScanner: 421aa419ac63eeb18c7cb94ce280fa22d34e8b0b
+  CapacitorCordova: 921bdb690ebe82421b24fce45552fd3dea2ae43a
   OSBarcodeLib: 57987d2eb1f916f701f4554e20e349b3cb83f023
 
-PODFILE CHECKSUM: 14c0fad0cafc209c7493f28f045312d0d635a678
+PODFILE CHECKSUM: d994f7d6c451be5ff31fe0d46f1283a24db43080
 
 COCOAPODS: 1.16.2

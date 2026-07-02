@@ -70,17 +70,17 @@ export type CapacitorBarcodeScannerOptions = {
   scanOrientation?: CapacitorBarcodeScannerScanOrientation;
   /**
    * Accessibility label (alternative text) read by screen readers for the cancel button.
-   * When omitted, the native library's default is used. Has no effect on web.
+   * When omitted, no accessibility label is set. Has no effect on web.
    */
   cancelButtonAccessibilityLabel?: string;
   /**
    * Accessibility label (alternative text) read by screen readers for the torch button when the torch is on.
-   * When omitted, the native library's default is used. Has no effect on web.
+   * When omitted, no accessibility label is set. Has no effect on web.
    */
   torchButtonOnAccessibilityLabel?: string;
   /**
    * Accessibility label (alternative text) read by screen readers for the torch button when the torch is off.
-   * When omitted, the native library's default is used. Has no effect on web.
+   * When omitted, no accessibility label is set. Has no effect on web.
    */
   torchButtonOffAccessibilityLabel?: string;
   android?: {

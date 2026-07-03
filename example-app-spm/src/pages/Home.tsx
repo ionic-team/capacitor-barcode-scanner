@@ -48,6 +48,9 @@ const Home: React.FC = () => {
         scanText: scanText,
         cameraDirection: cameraDirection,
         scanOrientation: scanOrientation,
+        cancelButtonAccessibilityLabel: "Cancel scanning",
+        torchButtonOnAccessibilityLabel: "Turn off flashlight",
+        torchButtonOffAccessibilityLabel: "Turn on flashlight",
         android: {
           scanningLibrary: androidScanningLibrary
         }

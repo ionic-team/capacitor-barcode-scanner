@@ -39,6 +39,9 @@ class CapacitorBarcodeScannerPlugin : Plugin() {
         val cameraDirection = call.getInt("cameraDirection")
         val scanOrientation = call.getInt("scanOrientation")
         val androidScanningLibrary = call.getObject("android")?.getString("scanningLibrary")
+        val cancelButtonAccessibilityLabel = call.getString("cancelButtonAccessibilityLabel")
+        val torchButtonOnAccessibilityLabel = call.getString("torchButtonOnAccessibilityLabel")
+        val torchButtonOffAccessibilityLabel = call.getString("torchButtonOffAccessibilityLabel")
 
         val parameters = OSBARCScanParameters(
                 scanInstructions = scanInstructions,
@@ -47,7 +50,10 @@ class CapacitorBarcodeScannerPlugin : Plugin() {
                 scanButton = scanButton,
                 scanText = scanText,
                 hint = hint,
-                androidScanningLibrary = androidScanningLibrary
+                androidScanningLibrary = androidScanningLibrary,
+                cancelButtonAccessibilityLabel = cancelButtonAccessibilityLabel,
+                torchButtonOnAccessibilityLabel = torchButtonOnAccessibilityLabel,
+                torchButtonOffAccessibilityLabel = torchButtonOffAccessibilityLabel
         )
 
         val scanIntent = Intent(activity, OSBARCScannerActivity::class.java)

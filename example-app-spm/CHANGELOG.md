@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v3.0.2...v3.1.0) (2026-07-08)
+
+
+### Features
+
+* add optional accessibility label scan parameters ([#124](https://github.com/ionic-team/capacitor-barcode-scanner/issues/124)) ([4f9394f](https://github.com/ionic-team/capacitor-barcode-scanner/commit/4f9394f305423152b31bceeae69f49e89b6b2c31))
+
+
+
+
+
 ## [3.0.2](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v3.0.1...v3.0.2) (2026-02-11)
 
 

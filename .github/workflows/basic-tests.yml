@@ -28,7 +28,7 @@ jobs:
         uses: ./.github/actions/setup-tools
       - name: 'Verify Android'
         working-directory: ./plugin
-        run: npm run verify:android
+        run: pnpm run verify:android
 
   verify-plugin-ios:
     needs: ['setup', 'lint-test', 'build-packages']
@@ -40,7 +40,7 @@ jobs:
         uses: ./.github/actions/setup-tools
       - name: 'Verify iOS'
         working-directory: ./plugin
-        run: npm run verify:ios
+        run: pnpm run verify:ios
 
   build-example-app-android:
     needs: ['verify-plugin-android']

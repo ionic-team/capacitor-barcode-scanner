@@ -20,7 +20,7 @@ jobs:
 
   verify-plugin-android:
     needs: ['setup', 'lint-test', 'build-packages']
-    runs-on: 'macos-latest'
+    runs-on: 'macos-15'
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5
@@ -32,7 +32,7 @@ jobs:
 
   verify-plugin-ios:
     needs: ['setup', 'lint-test', 'build-packages']
-    runs-on: 'macos-latest'
+    runs-on: 'macos-15'
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5
@@ -44,7 +44,7 @@ jobs:
 
   build-example-app-android:
     needs: ['verify-plugin-android']
-    runs-on: 'macos-latest'
+    runs-on: 'macos-15'
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5
@@ -58,7 +58,7 @@ jobs:
 
   build-example-app-ios:
     needs: ['verify-plugin-ios']
-    runs-on: 'macos-latest'
+    runs-on: 'macos-15'
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5

@@ -27,17 +27,17 @@ importers:
   example-app:
     dependencies:
       '@capacitor/android':
-        specifier: ^8.0.0
-        version: 8.3.4(@capacitor/core@8.3.4)
+        specifier: next
+        version: 9.0.0-alpha.6(@capacitor/core@9.0.0-alpha.6)
       '@capacitor/barcode-scanner':
         specifier: workspace:*
         version: link:../plugin
       '@capacitor/core':
-        specifier: ^8.0.0
-        version: 8.3.4
+        specifier: next
+        version: 9.0.0-alpha.6
       '@capacitor/ios':
-        specifier: ^8.0.0
-        version: 8.3.4(@capacitor/core@8.3.4)
+        specifier: next
+        version: 9.0.0-alpha.6(@capacitor/core@9.0.0-alpha.6)
       '@ionic/react':
         specifier: ^8.7.9
         version: 8.8.8(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -61,8 +61,8 @@ importers:
         version: 5.3.4(react@19.2.6)
     devDependencies:
       '@capacitor/cli':
-        specifier: ^8.0.0
-        version: 8.3.4
+        specifier: next
+        version: 9.0.0-alpha.6
       '@testing-library/dom':
         specifier: ^10.4.1
         version: 10.4.1
@@ -127,11 +127,11 @@ importers:
         specifier: workspace:*
         version: link:../plugin
       '@capacitor/core':
-        specifier: ^8.0.0
-        version: 8.3.4
+        specifier: next
+        version: 9.0.0-alpha.6
       '@capacitor/ios':
-        specifier: ^8.0.0
-        version: 8.3.4(@capacitor/core@8.3.4)
+        specifier: next
+        version: 9.0.0-alpha.6(@capacitor/core@9.0.0-alpha.6)
       '@ionic/react':
         specifier: ^8.7.9
         version: 8.8.8(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -155,8 +155,8 @@ importers:
         version: 5.3.4(react@19.2.6)
     devDependencies:
       '@capacitor/cli':
-        specifier: ^8.0.0
-        version: 8.3.4
+        specifier: next
+        version: 9.0.0-alpha.6
       '@testing-library/dom':
         specifier: ^10.4.1
         version: 10.4.1
@@ -222,17 +222,17 @@ importers:
         version: 2.3.8
     devDependencies:
       '@capacitor/android':
-        specifier: ^8.0.0
-        version: 8.3.4(@capacitor/core@8.3.4)
+        specifier: next
+        version: 9.0.0-alpha.6(@capacitor/core@9.0.0-alpha.6)
       '@capacitor/core':
-        specifier: ^8.0.0
-        version: 8.3.4
+        specifier: next
+        version: 9.0.0-alpha.6
       '@capacitor/docgen':
         specifier: 0.3.0
         version: 0.3.0
       '@capacitor/ios':
-        specifier: ^8.0.0
-        version: 8.3.4(@capacitor/core@8.3.4)
+        specifier: next
+        version: 9.0.0-alpha.6(@capacitor/core@9.0.0-alpha.6)
       '@ionic/swiftlint-config':
         specifier: ^2.0.0
         version: 2.0.0
@@ -800,28 +800,28 @@ packages:
     resolution: {integrity: sha512-4zBIxpPzowiZpusoFkyGVwakdRJUyuH5PxQ/PrqghfdFWWasvnCdPfQXHrenDai+gyLARulZjZowCOj6fjT4pA==}
     engines: {node: '>=6.9.0'}
 
-  '@capacitor/android@8.3.4':
-    resolution: {integrity: sha512-7gJjrG3X32Am1QMLqgMztWTYMLMVNE+VZwhekNxhvYizH4mOV05vH+rC9B+f17bCkYZfyu/qXQX6hoY7kLeVZw==}
+  '@capacitor/android@9.0.0-alpha.6':
+    resolution: {integrity: sha512-/hVYtjrvaoLinn8fkcnm2prCo7OSgbwP6x+tzQa+IQChTMsyBTAp/eWEvKCxh0EVQeUUWmRtLXd2CzhPamjdFA==}
     peerDependencies:
-      '@capacitor/core': ^8.3.0
+      '@capacitor/core': ^9.0.0-alpha.6
 
-  '@capacitor/cli@8.3.4':
-    resolution: {integrity: sha512-QEmyNdiDDVNYl0Mahm7YTVA/3t2tKcy7FWYDapeKGavS6HDNHZSjyTVwQpUXQbDZrrs/PS2Wau3Aii+LIFwm/A==}
+  '@capacitor/cli@9.0.0-alpha.6':
+    resolution: {integrity: sha512-PsPkbmK1SffBuv7kb6Htebyht2Y2tDJRPWvnxW/s8Y3BHv4LbCEhlIE3PeB+AnDgGNTAGp2e9BnTgWUHcmN7OQ==}
     engines: {node: '>=22.0.0'}
     hasBin: true
 
-  '@capacitor/core@8.3.4':
-    resolution: {integrity: sha512-CqRQCkb6HXxcx/N7s+hHTN6ef2CmamFiRMITwm4qB840ph56mS42bzUgn6tKCP+RZjdDweiRHj9ytDDeN6jFag==}
+  '@capacitor/core@9.0.0-alpha.6':
+    resolution: {integrity: sha512-AqCxIP+84lNNh1E+Yv04FRF9Pg8MTm+ed8QEC8OGOI4epbMwCEDdS0W84+C9ZAs+6cFtQcIS5N2owhOy2KeOOQ==}
 
   '@capacitor/docgen@0.3.0':
     resolution: {integrity: sha512-WPggobo5Ql70F+2xOIUwNSApJXaL9F/9+Al6B+sNuSAmcg484OAksyUPKgiynF4BVlxeY5a0sDkgdVkmmA3ElQ==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
-  '@capacitor/ios@8.3.4':
-    resolution: {integrity: sha512-XvvnPFWWP/gwwO811ue7nEBKSZqDCIB8hxGgWV6iXA7DSVLqMOEmQdfHj94kkVxof2wL9XWHypu3ayDULo7U5w==}
+  '@capacitor/ios@9.0.0-alpha.6':
+    resolution: {integrity: sha512-eFKuHmVdCnKMZ/+cMl24Up0yzLMFxS0vYXJLf62/556cHqTO9n7BBeXPCNIPpL5EV+wrVCw7Hq/xwXf7p2mGoQ==}
     peerDependencies:
-      '@capacitor/core': ^8.3.0
+      '@capacitor/core': ^9.0.0-alpha.6
 
   '@csstools/color-helpers@6.0.2':
     resolution: {integrity: sha512-LMGQLS9EuADloEFkcTBR3BwV/CGHV7zyDxVRtVDTwdI2Ca4it0CCVTT9wCkxSgokjE5Ho41hEPgb8OEUwoXr6Q==}
@@ -6080,11 +6080,11 @@ snapshots:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
-  '@capacitor/android@8.3.4(@capacitor/core@8.3.4)':
+  '@capacitor/android@9.0.0-alpha.6(@capacitor/core@9.0.0-alpha.6)':
     dependencies:
-      '@capacitor/core': 8.3.4
+      '@capacitor/core': 9.0.0-alpha.6
 
-  '@capacitor/cli@8.3.4':
+  '@capacitor/cli@9.0.0-alpha.6':
     dependencies:
       '@ionic/cli-framework-output': 2.2.8
       '@ionic/utils-subprocess': 3.0.1
@@ -6106,7 +6106,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@capacitor/core@8.3.4':
+  '@capacitor/core@9.0.0-alpha.6':
     dependencies:
       tslib: 2.8.1
 
@@ -6118,9 +6118,9 @@ snapshots:
       minimist: 1.2.8
       typescript: 4.2.4
 
-  '@capacitor/ios@8.3.4(@capacitor/core@8.3.4)':
+  '@capacitor/ios@9.0.0-alpha.6(@capacitor/core@9.0.0-alpha.6)':
     dependencies:
-      '@capacitor/core': 8.3.4
+      '@capacitor/core': 9.0.0-alpha.6
 
   '@csstools/color-helpers@6.0.2': {}
 
@@ -6722,7 +6722,7 @@ snapshots:
 
   '@npmcli/fs@5.0.0':
     dependencies:
-      semver: 7.7.2
+      semver: 7.8.1
 
   '@npmcli/git@6.0.3':
     dependencies:
@@ -9664,7 +9664,7 @@ snapshots:
 
   npm-install-checks@8.0.0:
     dependencies:
-      semver: 7.7.2
+      semver: 7.8.1
 
   npm-normalize-package-bin@4.0.0: {}
 
@@ -9674,7 +9674,7 @@ snapshots:
     dependencies:
       hosted-git-info: 8.1.0
       proc-log: 5.0.0
-      semver: 7.7.2
+      semver: 7.8.1
       validate-npm-package-name: 6.0.2
 
   npm-package-arg@13.0.1:

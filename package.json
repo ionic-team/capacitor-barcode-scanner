@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "@capacitor/barcode-scanner",
   "private": true,
   "scripts": {
     "prepare": "husky",

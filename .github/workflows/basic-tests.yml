@@ -18,38 +18,70 @@ jobs:
     needs: 'setup'
     uses: ./.github/workflows/reusable_build-packages.yml
 
-  verify-plugin:
+  verify-plugin-android:
     needs: ['setup', 'lint-test', 'build-packages']
-    runs-on: 'macos-latest'
+    runs-on: 'macos-15'
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5
       - name: 'Setup Tools'
         uses: ./.github/actions/setup-tools
-      - name: 'Verify iOS + Android + Web'
+      - name: 'Verify Android'
         working-directory: ./plugin
-        run: npm run verify
+        run: pnpm run verify:android
 
-  build-example-app:
-    needs: ['verify-plugin']
-    runs-on: 'macos-latest'
+  verify-plugin-ios:
+    needs: ['setup', 'lint-test', 'build-packages']
+    runs-on: 'macos-15'
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5
       - name: 'Setup Tools'
         uses: ./.github/actions/setup-tools
-      - name: 'Build plugin'
+      - name: 'Verify iOS'
         working-directory: ./plugin
-        run: npm run build
-      - name: 'Build Web example app'
-        working-directory: ./example-app
-        run: npm run build
-      - name: 'Sync example app native platforms'
-        working-directory: ./example-app
-        run: npx cap sync
+        run: pnpm run verify:ios
+
+  build-example-app-android:
+    needs: ['verify-plugin-android']
+    runs-on: 'macos-15'
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - name: 'Setup Tools'
+        uses: ./.github/actions/setup-tools
+      - name: 'Prepare example app'
+        uses: ./.github/actions/prepare-example-app
       - name: 'Build Android example app'
         working-directory: ./example-app/android
         run: ./gradlew clean assembleDebug
+
+  build-example-app-ios:
+    needs: ['verify-plugin-ios']
+    runs-on: 'macos-15'
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - name: 'Setup Tools'
+        uses: ./.github/actions/setup-tools
+      - name: 'Prepare example app'
+        uses: ./.github/actions/prepare-example-app
       - name: 'Build iOS example app'
         working-directory: ./example-app/ios/App
         run: xcodebuild clean build -workspace App.xcworkspace -scheme App CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+
+  build-example-app-spm-ios:
+    needs: ['verify-plugin-ios']
+    runs-on: 'macos-15'
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - name: 'Setup Tools'
+        uses: ./.github/actions/setup-tools
+      - name: 'Prepare example app'
+        uses: ./.github/actions/prepare-example-app
+        with:
+          app-dir: './example-app-spm'
+      - name: 'Build iOS SPM example app'
+        working-directory: ./example-app-spm/ios/App
+        run: xcodebuild clean build -project App.xcodeproj -scheme App CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO

@@ -121,8 +121,13 @@ export class CapacitorBarcodeScannerWeb
   /**
    * Initiates a barcode scan using the user's camera and HTML5 QR code scanner.
    * Displays the scanner UI and waits for a scan to complete or fail.
+   *
+   * The returned promise rejects with a CapacitorBarcodeScannerError when the
+   * scan cannot be completed. The error code can be checked using
+   * CapacitorBarcodeScannerErrorCode.
+   *
    * @param {OSBarcodeScanOptions} options Configuration options for the scan, including camera direction and UI preferences.
-   * @returns {Promise<OSBarcodeScanResult>} A promise that resolves with the scan result or rejects with an error.
+   * @returns {Promise<OSBarcodeScanResult>} A promise that resolves with the scan result or rejects with a CapacitorBarcodeScannerError.
    */
   async scanBarcode(
     options: CapacitorBarcodeScannerOptions,

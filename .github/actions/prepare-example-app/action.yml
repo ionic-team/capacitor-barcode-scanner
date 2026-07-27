@@ -1,6 +1,12 @@
 name: 'Prepare Example app'
 description: 'Does necessary pre-work for the example app to compile natively'
 
+inputs:
+  app-dir:
+    description: 'Path to the example app directory'
+    required: false
+    default: './example-app'
+
 runs:
   using: 'composite'
   steps:
@@ -9,10 +15,10 @@ runs:
       shell: bash
       run: pnpm run build
     - name: 'Build Web example app'
-      working-directory: ./example-app
+      working-directory: ${{ inputs.app-dir }}
       shell: bash
       run: pnpm run build
     - name: 'Sync example app native platforms'
-      working-directory: ./example-app
+      working-directory: ${{ inputs.app-dir }}
       shell: bash
       run: pnpm exec cap sync

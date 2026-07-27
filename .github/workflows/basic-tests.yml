@@ -69,3 +69,19 @@ jobs:
       - name: 'Build iOS example app'
         working-directory: ./example-app/ios/App
         run: xcodebuild clean build -workspace App.xcworkspace -scheme App CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+
+  build-example-app-spm-ios:
+    needs: ['verify-plugin-ios']
+    runs-on: 'macos-15'
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - name: 'Setup Tools'
+        uses: ./.github/actions/setup-tools
+      - name: 'Prepare example app'
+        uses: ./.github/actions/prepare-example-app
+        with:
+          app-dir: './example-app-spm'
+      - name: 'Build iOS SPM example app'
+        working-directory: ./example-app-spm/ios/App
+        run: xcodebuild clean build -project App.xcodeproj -scheme App CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO

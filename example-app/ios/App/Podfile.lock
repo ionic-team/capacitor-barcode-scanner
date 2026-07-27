@@ -1,16 +1,13 @@
 PODS:
-  - Capacitor (8.0.2):
-    - CapacitorCordova
-  - CapacitorBarcodeScanner (3.0.2):
+  - Capacitor (9.0.0-alpha.6)
+  - CapacitorBarcodeScanner (3.1.0):
     - Capacitor
     - OSBarcodeLib (= 2.2.0)
-  - CapacitorCordova (8.0.2)
   - OSBarcodeLib (2.2.0)
 
 DEPENDENCIES:
-  - "Capacitor (from `../../../node_modules/.pnpm/@capacitor+ios@8.0.2_@capacitor+core@8.0.2/node_modules/@capacitor/ios`)"
+  - "Capacitor (from `../../../node_modules/.pnpm/@capacitor+ios@9.0.0-alpha.6_@capacitor+core@9.0.0-alpha.6/node_modules/@capacitor/ios`)"
   - CapacitorBarcodeScanner (from `../../../plugin`)
-  - "CapacitorCordova (from `../../../node_modules/.pnpm/@capacitor+ios@8.0.2_@capacitor+core@8.0.2/node_modules/@capacitor/ios`)"
 
 SPEC REPOS:
   trunk:
@@ -18,18 +15,15 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Capacitor:
-    :path: "../../../node_modules/.pnpm/@capacitor+ios@8.0.2_@capacitor+core@8.0.2/node_modules/@capacitor/ios"
+    :path: "../../../node_modules/.pnpm/@capacitor+ios@9.0.0-alpha.6_@capacitor+core@9.0.0-alpha.6/node_modules/@capacitor/ios"
   CapacitorBarcodeScanner:
     :path: "../../../plugin"
-  CapacitorCordova:
-    :path: "../../../node_modules/.pnpm/@capacitor+ios@8.0.2_@capacitor+core@8.0.2/node_modules/@capacitor/ios"
 
 SPEC CHECKSUMS:
-  Capacitor: 2b79172ad27f3be2d103cce88b8eb9803fdcc744
-  CapacitorBarcodeScanner: 69c79a644283b98183cd603f1cfd8d5e9e4664e5
-  CapacitorCordova: 921bdb690ebe82421b24fce45552fd3dea2ae43a
+  Capacitor: b5cc4a2eadcd1184d4a581b4c631dd8ef7bb34b1
+  CapacitorBarcodeScanner: 5cb620e3ea70073e3c5f608625900112dbba7907
   OSBarcodeLib: aa520d51576362d0dfea290b82653e31df1a6fc4
 
-PODFILE CHECKSUM: d994f7d6c451be5ff31fe0d46f1283a24db43080
+PODFILE CHECKSUM: 3658cb3c2413199fc8ba3d88dabe8a48a4e45ae3
 
 COCOAPODS: 1.16.2

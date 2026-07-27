@@ -11,14 +11,6 @@ npx cap sync
 
 #### Android
 
-The barcode scanner plugin requires a minimum Android SDK target of 26. This is higher than the default that comes with your Capacitor application. You can update this value in your `android/variables.gradle` file.
-
-```gradle
-ext {
-    minSdkVersion = 26
-}
-```
-
 Note: Android with `ZXING` scanning library supports all formats, while `MLKIT` supports all except `MAXICODE`, `RSS_14`, `RSS_EXPANDED` and `UPC_EAN_EXTENSION` - using one of these in `hint` will default to scanning any format.
 
 #### iOS

@@ -8,6 +8,8 @@ import type {
   CapacitorBarcodeScannerScanResult,
 } from "./definitions";
 import {
+  CapacitorBarcodeScannerError,
+  CapacitorBarcodeScannerErrorCode,
   CapacitorBarcodeScannerScanOrientation,
   CapacitorBarcodeScannerTypeHint,
 } from "./definitions";
@@ -19,21 +21,39 @@ export class CapacitorBarcodeScannerWeb
   extends WebPlugin
   implements CapacitorBarcodeScannerPlugin
 {
+  private scanner: Html5Qrcode | null = null;
+
+  private scannerStarted = false;
   /**
    * Stops the barcode scanner and hides its UI.
    * @private
    * @returns {Promise<void>} A promise that resolves when the scanner has stopped and its UI is hidden.
    */
   private async stopAndHideScanner(): Promise<void> {
-    console.log((window as any).OSBarcodeWebScanner);
-    if ((window as any).OSBarcodeWebScanner) {
-      await (window as any).OSBarcodeWebScanner.stop();
-      (window as any).OSBarcodeWebScanner = null;
+    try {
+      if (this.scanner && this.scannerStarted) {
+        await this.scanner.stop();
+      }
+    } catch {
+      // Ignore stop errors
     }
 
-    document.getElementById(
+    try {
+      await this.scanner?.clear();
+    } catch {
+      // Ignore cleanup errors
+    }
+
+    this.scanner = null;
+    this.scannerStarted = false;
+
+    const dialog = document.getElementById(
       "cap-os-barcode-scanner-container-dialog",
-    )!.style.display = "none";
+    );
+
+    if (dialog) {
+      dialog.style.display = "none";
+    }
   }
 
   /**
@@ -141,7 +161,12 @@ export class CapacitorBarcodeScannerWeb
           if (alreadyCancelled) return;
           alreadyCancelled = true;
           await this.stopAndHideScanner();
-          reject(new Error("Couldn’t scan because the process was cancelled."));
+          reject(
+            new CapacitorBarcodeScannerError(
+              CapacitorBarcodeScannerErrorCode.SCAN_CANCELLED,
+              "Scan cancelled by user.",
+            ),
+          );
         };
       }
 
@@ -153,7 +178,7 @@ export class CapacitorBarcodeScannerWeb
         throw new Error("Scanner Element is required for web");
       }
 
-      (window as any).OSBarcodeWebScanner = new Html5Qrcode(scannerElement.id, {
+      this.scanner = new Html5Qrcode(scannerElement.id, {
         formatsToSupport:
           param.typeHint !== undefined ? [param.typeHint] : undefined,
         verbose: undefined,
@@ -198,12 +223,70 @@ export class CapacitorBarcodeScannerWeb
         }
       };
 
-      (window as any).OSBarcodeWebScanner.start(
-        { facingMode: param.facingMode },
-        Html5QrcodeConfig,
-        OSBarcodeWebScannerSuccessCallback,
-        OSBarcodeWebScannerErrorCallback,
-      );
+      this.scanner
+        .start(
+          { facingMode: param.facingMode },
+          Html5QrcodeConfig,
+          OSBarcodeWebScannerSuccessCallback,
+          OSBarcodeWebScannerErrorCallback,
+        )
+        .then(() => {
+          this.scannerStarted = true;
+        })
+        .catch(async (error: unknown) => {
+          await this.stopAndHideScanner();
+
+          if (alreadyCancelled) {
+            return;
+          }
+
+          alreadyCancelled = true;
+
+          reject(this.mapScannerError(error));
+        });
     });
+  }
+
+  private mapScannerError(error: unknown): Error {
+    const message = error instanceof Error ? error.message : String(error);
+
+    if (
+      message.includes("NotAllowedError") ||
+      message.includes("Permission denied")
+    ) {
+      return new CapacitorBarcodeScannerError(
+        CapacitorBarcodeScannerErrorCode.CAMERA_PERMISSION_DENIED,
+        "Camera permission denied.",
+        error,
+      );
+    }
+
+    if (
+      message.includes("NotFoundError") ||
+      message.includes("Requested device not found")
+    ) {
+      return new CapacitorBarcodeScannerError(
+        CapacitorBarcodeScannerErrorCode.CAMERA_NOT_FOUND,
+        "No camera available.",
+        error,
+      );
+    }
+
+    if (
+      message.includes("NotReadableError") ||
+      message.includes("TrackStartError")
+    ) {
+      return new CapacitorBarcodeScannerError(
+        CapacitorBarcodeScannerErrorCode.CAMERA_ALREADY_IN_USE,
+        "Camera is already in use.",
+        error,
+      );
+    }
+
+    return new CapacitorBarcodeScannerError(
+      CapacitorBarcodeScannerErrorCode.UNKNOWN,
+      message,
+      error,
+    );
   }
 }

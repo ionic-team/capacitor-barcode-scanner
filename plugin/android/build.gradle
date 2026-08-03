@@ -53,10 +53,13 @@ kotlin {
 repositories {
     google()
     mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 dependencies {
-    implementation "io.ionic.libs:ionbarcode-android:2.1.0@aar"
+    implementation(name: 'OSBarcodeLib-debug', ext: 'aar')
     implementation project(':capacitor-android')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     implementation "androidx.activity:activity-ktx:$androidxActivityVersion"

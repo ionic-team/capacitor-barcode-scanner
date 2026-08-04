@@ -21,9 +21,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        flatDir {
-            dirs new File(rootDir, '../../plugin/android/libs').canonicalPath
-        }
     }
 }
 

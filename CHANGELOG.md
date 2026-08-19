@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.1](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v3.1.0...v3.1.1) (2026-08-19)
+
+
+### Bug Fixes
+
+* **android:** only apply kotlin-android plugin if not already applied ([#137](https://github.com/ionic-team/capacitor-barcode-scanner/issues/137)) ([e987c5a](https://github.com/ionic-team/capacitor-barcode-scanner/commit/e987c5a9c2d22a441bc4dc364aa0775815ae6ee8))
+* **android:** only show camera preview after grating permission ([#135](https://github.com/ionic-team/capacitor-barcode-scanner/issues/135)) ([5dda577](https://github.com/ionic-team/capacitor-barcode-scanner/commit/5dda577007095ae63b373d69fa48072eeb22cce1))
+
+
+
+
+
 # [3.1.0](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v3.0.2...v3.1.0) (2026-07-08)
 
 

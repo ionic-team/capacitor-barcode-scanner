@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.2](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v3.1.1...v3.1.2) (2026-09-02)
+
+
+### Bug Fixes
+
+* prevent SwiftUICore crash on ios 15/16 ([#138](https://github.com/ionic-team/capacitor-barcode-scanner/issues/138)) ([1a4bd9e](https://github.com/ionic-team/capacitor-barcode-scanner/commit/1a4bd9e7eef97c1293add0661b195a8c83b35e93))
+
+
+
+
+
 ## [3.1.1](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v3.1.0...v3.1.1) (2026-08-19)
 
 

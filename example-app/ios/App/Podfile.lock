@@ -1,16 +1,16 @@
 PODS:
-  - Capacitor (8.0.2):
+  - Capacitor (8.3.4):
     - CapacitorCordova
-  - CapacitorBarcodeScanner (3.0.2):
+  - CapacitorBarcodeScanner (3.1.1):
     - Capacitor
-    - OSBarcodeLib (= 2.2.0)
-  - CapacitorCordova (8.0.2)
-  - OSBarcodeLib (2.2.0)
+    - OSBarcodeLib (= 2.2.1)
+  - CapacitorCordova (8.3.4)
+  - OSBarcodeLib (2.2.1)
 
 DEPENDENCIES:
-  - "Capacitor (from `../../../node_modules/.pnpm/@capacitor+ios@8.0.2_@capacitor+core@8.0.2/node_modules/@capacitor/ios`)"
+  - "Capacitor (from `../../../node_modules/.pnpm/@capacitor+ios@8.3.4_@capacitor+core@8.3.4/node_modules/@capacitor/ios`)"
   - CapacitorBarcodeScanner (from `../../../plugin`)
-  - "CapacitorCordova (from `../../../node_modules/.pnpm/@capacitor+ios@8.0.2_@capacitor+core@8.0.2/node_modules/@capacitor/ios`)"
+  - "CapacitorCordova (from `../../../node_modules/.pnpm/@capacitor+ios@8.3.4_@capacitor+core@8.3.4/node_modules/@capacitor/ios`)"
 
 SPEC REPOS:
   trunk:
@@ -18,18 +18,18 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Capacitor:
-    :path: "../../../node_modules/.pnpm/@capacitor+ios@8.0.2_@capacitor+core@8.0.2/node_modules/@capacitor/ios"
+    :path: "../../../node_modules/.pnpm/@capacitor+ios@8.3.4_@capacitor+core@8.3.4/node_modules/@capacitor/ios"
   CapacitorBarcodeScanner:
     :path: "../../../plugin"
   CapacitorCordova:
-    :path: "../../../node_modules/.pnpm/@capacitor+ios@8.0.2_@capacitor+core@8.0.2/node_modules/@capacitor/ios"
+    :path: "../../../node_modules/.pnpm/@capacitor+ios@8.3.4_@capacitor+core@8.3.4/node_modules/@capacitor/ios"
 
 SPEC CHECKSUMS:
-  Capacitor: 2b79172ad27f3be2d103cce88b8eb9803fdcc744
-  CapacitorBarcodeScanner: 69c79a644283b98183cd603f1cfd8d5e9e4664e5
-  CapacitorCordova: 921bdb690ebe82421b24fce45552fd3dea2ae43a
-  OSBarcodeLib: aa520d51576362d0dfea290b82653e31df1a6fc4
+  Capacitor: d13cad5fa09155679672808cc4ca9fbc2997e1b4
+  CapacitorBarcodeScanner: b17279c8a04e557df7b777ab72d2136836c33b21
+  CapacitorCordova: c07921bdcfec6f691bae22274446b4d606ebf6a4
+  OSBarcodeLib: e749f578530593d2e4ea3a2096fecb953fe7a943
 
-PODFILE CHECKSUM: d994f7d6c451be5ff31fe0d46f1283a24db43080
+PODFILE CHECKSUM: 3ab5c7fdfeb6ca305dc9548fa97992a1e44e9083
 
 COCOAPODS: 1.16.2

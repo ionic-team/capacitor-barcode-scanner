@@ -108,3 +108,53 @@ export interface CapacitorBarcodeScannerPlugin {
     options: CapacitorBarcodeScannerOptions,
   ): Promise<CapacitorBarcodeScannerScanResult>;
 }
+
+/**
+ * Error codes returned by CapacitorBarcodeScannerError.
+ */
+export enum CapacitorBarcodeScannerErrorCode {
+  /**
+   * Camera permission was denied.
+   */
+  CAMERA_PERMISSION_DENIED = "CAMERA_PERMISSION_DENIED",
+
+  /**
+   * No camera device was found.
+   */
+  CAMERA_NOT_FOUND = "CAMERA_NOT_FOUND",
+
+  /**
+   * Camera is already being used.
+   */
+  CAMERA_ALREADY_IN_USE = "CAMERA_ALREADY_IN_USE",
+
+  /**
+   * User cancelled the scan.
+   */
+  SCAN_CANCELLED = "SCAN_CANCELLED",
+
+  /**
+   * Browser does not support barcode scanning.
+   */
+  UNSUPPORTED_BROWSER = "UNSUPPORTED_BROWSER",
+
+  /**
+   * Unknown scanning error.
+   */
+  UNKNOWN = "UNKNOWN",
+}
+
+/**
+ * Typed error returned by the barcode scanner.
+ */
+export class CapacitorBarcodeScannerError extends Error {
+  constructor(
+    public readonly code: CapacitorBarcodeScannerErrorCode,
+    message: string,
+    public readonly cause?: unknown,
+  ) {
+    super(message);
+
+    this.name = "CapacitorBarcodeScannerError";
+  }
+}

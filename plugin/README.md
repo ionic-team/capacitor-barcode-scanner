@@ -151,3 +151,47 @@ Defines the options for configuring a barcode scan.
 | **`MLKIT`** | <code>"mlkit"</code> |
 
 </docgen-api>
+
+## Error handling
+
+The `scanBarcode(...)` method may throw a `CapacitorBarcodeScannerError`.
+
+`CapacitorBarcodeScannerError` extends the native JavaScript `Error` object
+and provides a `code` property that can be used to identify the failure reason.
+
+Example:
+
+```ts
+import {
+  CapacitorBarcodeScanner,
+  CapacitorBarcodeScannerError,
+  CapacitorBarcodeScannerErrorCode,
+} from "@capacitor/barcode-scanner";
+
+try {
+  const result = await CapacitorBarcodeScanner.scanBarcode({
+    hint: CapacitorBarcodeScannerTypeHint.ALL,
+  });
+
+  console.log(result);
+} catch (error) {
+  if (
+    error instanceof CapacitorBarcodeScannerError &&
+    error.code === CapacitorBarcodeScannerErrorCode.CAMERA_PERMISSION_DENIED
+  ) {
+    // Inform the user that camera permission is required.
+    // The user must enable camera access in the device settings.
+  }
+}
+```
+
+Available error codes:
+
+| Code                       | Description                                                           |
+| -------------------------- | --------------------------------------------------------------------- |
+| `CAMERA_PERMISSION_DENIED` | The application does not have permission to access the camera.        |
+| `CAMERA_NOT_FOUND`         | No camera device was found.                                           |
+| `CAMERA_ALREADY_IN_USE`    | The camera is currently being used by another application or process. |
+| `SCAN_CANCELLED`           | The user cancelled the barcode scanning operation.                    |
+| `UNSUPPORTED_BROWSER`      | The current browser does not support barcode scanning.                |
+| `UNKNOWN`                  | An unknown error occurred while scanning.                             |

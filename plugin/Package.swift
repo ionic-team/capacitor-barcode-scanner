@@ -10,14 +10,14 @@ let package = Package(
             targets: ["CapacitorBarcodeScannerPlugin"])
     ],
     dependencies: [
-        .package(url: "https://github.com/ionic-team/capacitor-swift-pm.git", from: "9.0.0-alpha.5"),
+        .package(url: "https://github.com/ionic-team/capacitor.git", from: "9.0.0-alpha.7"),
         .package(url: "https://github.com/OutSystems/OSBarcodeLib-iOS.git", from: "2.2.0")
     ],
     targets: [
         .target(
             name: "CapacitorBarcodeScannerPlugin",
             dependencies: [
-                .product(name: "Capacitor", package: "capacitor-swift-pm"),
+                .product(name: "Capacitor", package: "capacitor"),
                 .product(name: "OSBarcodeLib", package: "OSBarcodeLib-iOS")
             ],
             path: "ios/Sources/CapacitorBarcodeScannerPlugin"),

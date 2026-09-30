@@ -39,8 +39,7 @@ export const CapacitorBarcodeScannerTypeHint = {
  */
 
 export type CapacitorBarcodeScannerTypeHint =
-  | Html5QrcodeSupportedFormats
-  | CapacitorBarcodeScannerTypeHintALLOption;
+  Html5QrcodeSupportedFormats | CapacitorBarcodeScannerTypeHintALLOption;
 
 /**
  * Enum representing the library to be used for barcode scanning on Android devices.

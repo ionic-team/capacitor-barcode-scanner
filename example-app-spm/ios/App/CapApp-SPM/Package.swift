@@ -11,14 +11,14 @@ let package = Package(
             targets: ["CapApp-SPM"])
     ],
     dependencies: [
-        .package(url: "https://github.com/ionic-team/capacitor-swift-pm.git", exact: "9.0.0-alpha.6"),
+        .package(url: "https://github.com/ionic-team/capacitor", exact: "9.0.0-alpha.7"),
         .package(name: "CapacitorBarcodeScanner", path: "../../../../plugin")
     ],
     targets: [
         .target(
             name: "CapApp-SPM",
             dependencies: [
-                .product(name: "Capacitor", package: "capacitor-swift-pm"),
+                .product(name: "Capacitor", package: "capacitor"),
                 .product(name: "CapacitorBarcodeScanner", package: "CapacitorBarcodeScanner")
             ]
         )

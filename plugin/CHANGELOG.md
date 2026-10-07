@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.3](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v3.1.2...v3.1.3) (2026-10-07)
+
+
+### Bug Fixes
+
+* **ios:** update native lib to latest version ([#142](https://github.com/ionic-team/capacitor-barcode-scanner/issues/142)) ([bdb2b19](https://github.com/ionic-team/capacitor-barcode-scanner/commit/bdb2b19be34b615e7e22a3046e78252b4d038fa4))
+
+
+
+
+
 ## [3.1.2](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v3.1.1...v3.1.2) (2026-09-02)
 
 

@@ -1,4 +1,4 @@
-require_relative '../../../node_modules/.pnpm/@capacitor+ios@9.0.0-alpha.6_@capacitor+core@9.0.0-alpha.6/node_modules/@capacitor/ios/scripts/pods_helpers'
+require_relative '../../../node_modules/.pnpm/@capacitor+ios@9.0.0-alpha.7_@capacitor+core@9.0.0-alpha.7/node_modules/@capacitor/ios/scripts/pods_helpers'
 
 platform :ios, '16.0'
 use_frameworks!
@@ -9,7 +9,7 @@ use_frameworks!
 install! 'cocoapods', :disable_input_output_paths => true
 
 def capacitor_pods
-  pod 'Capacitor', :path => '../../../node_modules/.pnpm/@capacitor+ios@9.0.0-alpha.6_@capacitor+core@9.0.0-alpha.6/node_modules/@capacitor/ios'
+  pod 'Capacitor', :path => '../../../node_modules/.pnpm/@capacitor+ios@9.0.0-alpha.7_@capacitor+core@9.0.0-alpha.7/node_modules/@capacitor/ios'
   pod 'CapacitorBarcodeScanner', :path => '../../../plugin'
 end
 

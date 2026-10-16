@@ -3,5 +3,12 @@ packages:
   - example-app
   - example-app-spm
 
+allowBuilds:
+  core-js: set this to true or false
+  cypress: set this to true or false
+  esbuild: set this to true or false
+  nx: set this to true or false
+  swiftlint: set this to true or false
+
 overrides:
   tmp@<0.2.6: '>=0.2.6'

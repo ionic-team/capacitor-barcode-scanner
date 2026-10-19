@@ -28,16 +28,16 @@ importers:
     dependencies:
       '@capacitor/android':
         specifier: next
-        version: 9.0.0-alpha.7(@capacitor/core@9.0.0-alpha.7)
+        version: 9.0.0-alpha.8(@capacitor/core@9.0.0-alpha.8)
       '@capacitor/barcode-scanner':
         specifier: workspace:*
         version: link:../plugin
       '@capacitor/core':
         specifier: next
-        version: 9.0.0-alpha.7
+        version: 9.0.0-alpha.8
       '@capacitor/ios':
         specifier: next
-        version: 9.0.0-alpha.7(@capacitor/core@9.0.0-alpha.7)
+        version: 9.0.0-alpha.8(@capacitor/core@9.0.0-alpha.8)
       '@ionic/react':
         specifier: ^8.7.9
         version: 8.8.19(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -62,7 +62,7 @@ importers:
     devDependencies:
       '@capacitor/cli':
         specifier: next
-        version: 9.0.0-alpha.7
+        version: 9.0.0-alpha.8
       '@eslint/js':
         specifier: ^10.0.0
         version: 10.0.1(eslint@10.11.0)
@@ -134,10 +134,10 @@ importers:
         version: link:../plugin
       '@capacitor/core':
         specifier: next
-        version: 9.0.0-alpha.7
+        version: 9.0.0-alpha.8
       '@capacitor/ios':
         specifier: next
-        version: 9.0.0-alpha.7(@capacitor/core@9.0.0-alpha.7)
+        version: 9.0.0-alpha.8(@capacitor/core@9.0.0-alpha.8)
       '@ionic/react':
         specifier: ^8.7.9
         version: 8.8.19(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -162,7 +162,7 @@ importers:
     devDependencies:
       '@capacitor/cli':
         specifier: next
-        version: 9.0.0-alpha.7
+        version: 9.0.0-alpha.8
       '@eslint/js':
         specifier: ^10.0.0
         version: 10.0.1(eslint@10.11.0)
@@ -817,13 +817,21 @@ packages:
     peerDependencies:
       '@capacitor/core': ^9.0.0-alpha.7
 
-  '@capacitor/cli@9.0.0-alpha.7':
-    resolution: {integrity: sha512-nim1VNnklYJ6J/6jXzjmcuPQqMw09ZbVFELAKaJYBHld5WWgiCHofEiBLh39vAGoZwLYOjbYHWSf+mG6EnIgmA==}
+  '@capacitor/android@9.0.0-alpha.8':
+    resolution: {integrity: sha512-GQnroStfOLkGMfSEyyG0BA3U0nf4vCdqMlI4q5PQLYbFLYmZpw7apPYtuxqxIClyOdxFdFH9elyIIyY7vtDltA==}
+    peerDependencies:
+      '@capacitor/core': ^9.0.0-alpha.8
+
+  '@capacitor/cli@9.0.0-alpha.8':
+    resolution: {integrity: sha512-dlBcYi2+wIn2K9Uvqbg9zvm4SIKiFCIyWUge1TAb0uVELkPr2C5hCFRqSMeBUlokwBsn9vPBjQtZDUbLeRSG0A==}
     engines: {node: '>=24.0.0'}
     hasBin: true
 
   '@capacitor/core@9.0.0-alpha.7':
     resolution: {integrity: sha512-SwoNbLRiOGdVXdxUFLqxsSlqura0v85w72I0KrKKLBZ4wxpd4buHP3BIpUV66/Go8BHUQOW/3nTDwraDjucsxg==}
+
+  '@capacitor/core@9.0.0-alpha.8':
+    resolution: {integrity: sha512-iLOr7JDsZJ70KroeafRE+dsGoYlyelbhaJHOnNdlcJs7N5QSwU+mhLq7NwPsYRQHy12LIGPGZDtOhFXDpsR9PA==}
 
   '@capacitor/docgen@0.3.0':
     resolution: {integrity: sha512-WPggobo5Ql70F+2xOIUwNSApJXaL9F/9+Al6B+sNuSAmcg484OAksyUPKgiynF4BVlxeY5a0sDkgdVkmmA3ElQ==}
@@ -834,6 +842,11 @@ packages:
     resolution: {integrity: sha512-r/y7mqyD7vZJrVEennZaH2uj+VzdW++/ZlnTAtmNYuOkz3Y3RdSeADm9Cg4yHCYpaEqpbuFDm9dzoS9K5e+jvQ==}
     peerDependencies:
       '@capacitor/core': ^9.0.0-alpha.7
+
+  '@capacitor/ios@9.0.0-alpha.8':
+    resolution: {integrity: sha512-tOgU6oPp2Xu77+rdDaLNObJgHbhfNoS3STUqn5SUTkGOvJTg15WhwqGDZPwV6nNwsNAcFLVERcN5KDIfFctPDw==}
+    peerDependencies:
+      '@capacitor/core': ^9.0.0-alpha.8
 
   '@csstools/color-helpers@6.1.1':
     resolution: {integrity: sha512-gLNsunvwf3mCi5u5o46/Z/JcJMnhbHSaZ69rkgPzNM3J4s8hWwpPUQB6/tt0EDFyCiWzxANlx+2LJwpYj4zS1w==}
@@ -4329,8 +4342,8 @@ packages:
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
 
-  react-is@19.3.0:
-    resolution: {integrity: sha512-UpMYezM4v5/18F28aC66AEsjXIgE02kyEMH6yLdgLXu/UTfa1Ntwck/nNLrbqJsEXW7gPb0coNO9FQse9WTovA==}
+  react-is@19.3.1:
+    resolution: {integrity: sha512-RRieF6IyxQBkcK6pP8xOHprLTPW6QjRkbGdImtqNme+/hYVwCZkLQLdlZGOhUqXwkS9IEynaGvPJtv6XB/cz0Q==}
 
   react-refresh@0.18.0:
     resolution: {integrity: sha512-QgT5//D3jfjJb6Gsjxv0Slpj23ip+HtOpnNgnb2S5zU3CB26G/IDPGoy4RJB42wzFE46DRsstbW6tKHoKbhAxw==}
@@ -5950,7 +5963,11 @@ snapshots:
     dependencies:
       '@capacitor/core': 9.0.0-alpha.7
 
-  '@capacitor/cli@9.0.0-alpha.7':
+  '@capacitor/android@9.0.0-alpha.8(@capacitor/core@9.0.0-alpha.8)':
+    dependencies:
+      '@capacitor/core': 9.0.0-alpha.8
+
+  '@capacitor/cli@9.0.0-alpha.8':
     dependencies:
       '@ionic/cli-framework-output': 2.2.8
       '@ionic/utils-subprocess': 3.0.1
@@ -5977,6 +5994,10 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
+  '@capacitor/core@9.0.0-alpha.8':
+    dependencies:
+      tslib: 2.8.1
+
   '@capacitor/docgen@0.3.0':
     dependencies:
       '@types/node': 14.18.63
@@ -5988,6 +6009,10 @@ snapshots:
   '@capacitor/ios@9.0.0-alpha.7(@capacitor/core@9.0.0-alpha.7)':
     dependencies:
       '@capacitor/core': 9.0.0-alpha.7
+
+  '@capacitor/ios@9.0.0-alpha.8(@capacitor/core@9.0.0-alpha.8)':
+    dependencies:
+      '@capacitor/core': 9.0.0-alpha.8
 
   '@csstools/color-helpers@6.1.1': {}
 
@@ -9732,7 +9757,7 @@ snapshots:
   pretty-format@30.5.1:
     dependencies:
       '@jest/react-is-18': react-is@18.3.1
-      '@jest/react-is-19': react-is@19.3.0
+      '@jest/react-is-19': react-is@19.3.1
       '@jest/schemas': 30.5.0
       ansi-styles: 5.2.0
 
@@ -9805,7 +9830,7 @@ snapshots:
 
   react-is@18.3.1: {}
 
-  react-is@19.3.0: {}
+  react-is@19.3.1: {}
 
   react-refresh@0.18.0: {}
 

@@ -15,6 +15,8 @@
 		504EC3121FED79650016851F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504EC3101FED79650016851F /* LaunchScreen.storyboard */; };
 		50B271D11FEDC1A000F3C39B /* public in Resources */ = {isa = PBXBuildFile; fileRef = 50B271D01FEDC1A000F3C39B /* public */; };
 		887287AB2E796F5A00D9E41B /* CapApp-SPM in Frameworks */ = {isa = PBXBuildFile; productRef = 887287AA2E796F5A00D9E41B /* CapApp-SPM */; };
+		A0D966914B124D0D88DD93F8 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C127BF0217B8431EAC7F7335 /* App.swift */; };
+		CB87D568878A45A49DF41961 /* CapacitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B0D6A98AC401DA6BF7DCB /* CapacitorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		504EC3131FED79650016851F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50B271D01FEDC1A000F3C39B /* public */ = {isa = PBXFileReference; lastKnownFileType = folder; path = public; sourceTree = "<group>"; };
 		887287AC2E796F9D00D9E41B /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
+		C127BF0217B8431EAC7F7335 /* App.swift */ = {isa = PBXFileReference; name = "App.swift"; path = "App.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
+		7E9B0D6A98AC401DA6BF7DCB /* CapacitorView.swift */ = {isa = PBXFileReference; name = "CapacitorView.swift"; path = "CapacitorView.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 				504EC3131FED79650016851F /* Info.plist */,
 				2FAD9762203C412B000D30F8 /* config.xml */,
 				50B271D01FEDC1A000F3C39B /* public */,
+				C127BF0217B8431EAC7F7335 /* App.swift */,
+				7E9B0D6A98AC401DA6BF7DCB /* CapacitorView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -100,8 +106,8 @@
 		504EC2FC1FED79650016851F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastSwiftUpdateCheck = 920;
+				LastUpgradeCheck = 920;
 				TargetAttributes = {
 					504EC3031FED79650016851F = {
 						CreatedOnToolsVersion = 9.2;
@@ -153,6 +159,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				504EC3081FED79650016851F /* AppDelegate.swift in Sources */,
+				A0D966914B124D0D88DD93F8 /* App.swift in Sources */,
+				CB87D568878A45A49DF41961 /* CapacitorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

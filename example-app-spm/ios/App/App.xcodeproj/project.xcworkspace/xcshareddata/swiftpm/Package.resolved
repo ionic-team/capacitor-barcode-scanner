@@ -1,13 +1,13 @@
 {
-  "originHash" : "e0e40201eccc31780939c27379a9cda46d94b03345f7ad157b1c494fb6c91819",
+  "originHash" : "b42938b2924bb6855147fc444bf08a3d4a867d743fa22906220dcd0be1cb95ea",
   "pins" : [
     {
       "identity" : "capacitor",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ionic-team/capacitor.git",
       "state" : {
-        "revision" : "9492c9fff96e51aa00eed837938eacae62140faa",
-        "version" : "9.0.0-alpha.7"
+        "revision" : "1a5c358456c99ffae32ed27b0a2e29f2ae14bea6",
+        "version" : "9.0.0-alpha.8"
       }
     },
     {

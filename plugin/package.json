@@ -9,6 +9,7 @@
   "files": [
     "android/src/main/",
     "android/build.gradle",
+    "android/local-maven/",
     "dist/",
     "CapacitorBarcodeScanner.podspec",
     "scripts/",

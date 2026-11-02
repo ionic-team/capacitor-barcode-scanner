@@ -55,13 +55,22 @@ kotlin {
     jvmToolchain(21)
 }
 
+// RMET-5348 TEST ONLY - do not merge: resolve the locally built native library bundled in this plugin (android/local-maven).
+// Registered on every project because the app project resolves the plugin's dependencies with its own repositories.
+def rmet5348LocalMaven = uri("$projectDir/local-maven")
+rootProject.allprojects {
+    repositories {
+        maven { url rmet5348LocalMaven }
+    }
+}
+
 repositories {
     google()
     mavenCentral()
 }
 
 dependencies {
-    implementation "io.ionic.libs:ionbarcode-android:2.1.1@aar"
+    implementation "io.ionic.libs:ionbarcode-android:99.0.0-rmet5348@aar"
     implementation project(':capacitor-android')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     implementation 'androidx.activity:activity-ktx:1.11.0'

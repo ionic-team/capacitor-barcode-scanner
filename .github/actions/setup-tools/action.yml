@@ -44,7 +44,7 @@ runs:
       shell: bash
       run: pnpm install
     
-    - name: Set Xcode 26.0  # minimum support Xcode version by Capacitor 8
+    - name: Set Xcode 27.0  # minimum support Xcode version by Capacitor 9
       if: runner.os == 'macOS'
       shell: bash
-      run: sudo xcode-select --switch /Applications/Xcode_26.0.app
+      run: sudo xcode-select --switch /Applications/Xcode_27.0.app

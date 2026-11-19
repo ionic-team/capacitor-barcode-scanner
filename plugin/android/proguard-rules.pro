@@ -19,3 +19,6 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# ML Kit barcode scanning brings firebase-components 16.1.0, which loses these constructors under AGP 9.
+-keep class * implements com.google.firebase.components.ComponentRegistrar { <init>(); }

@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: capacitor-barcode-scanner
+  title: '@capacitor/barcode-scanner'
+  description: Scan barcodes and QR codes.
+  annotations:
+    github.com/project-slug: ionic-team/capacitor-barcode-scanner
+  tags: [typescript, swift, java, npm-package, capacitor-plugin]
+spec:
+  type: library
+  lifecycle: production
+  owner: group:default/mobile-ecosystem
+  system: capacitor
+  dependsOn: [component:default/capacitor-core]

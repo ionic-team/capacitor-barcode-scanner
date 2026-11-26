@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.4](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v3.1.3...v3.1.4) (2026-11-19)
+
+
+### Bug Fixes
+
+* **ios:** rotate the scanner to the forced scanOrientation in UIScene apps ([#148](https://github.com/ionic-team/capacitor-barcode-scanner/issues/148)) ([ff48574](https://github.com/ionic-team/capacitor-barcode-scanner/commit/ff48574d699e9cf3e83ab799f2124423fe388cf0))
+
+
+
+
+
 ## [3.1.3](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v3.1.2...v3.1.3) (2026-10-07)
 
 

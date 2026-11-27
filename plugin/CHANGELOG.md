@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.5](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v3.1.4...v3.1.5) (2026-11-27)
+
+
+### Bug Fixes
+
+* **android:** bump ionbarcode-android to 2.1.2 ([#155](https://github.com/ionic-team/capacitor-barcode-scanner/issues/155)) ([7bad673](https://github.com/ionic-team/capacitor-barcode-scanner/commit/7bad6731048d3d9bc318224bfd1a5551d9f1db22))
+* **android:** remove [@aar](https://github.com/aar) annotation from native lib  ([#159](https://github.com/ionic-team/capacitor-barcode-scanner/issues/159)) ([5a89b61](https://github.com/ionic-team/capacitor-barcode-scanner/commit/5a89b619c6b11653473e772e3a7a31c487fd039a))
+
+
+
+
+
 ## [3.1.4](https://github.com/ionic-team/capacitor-barcode-scanner/compare/v3.1.3...v3.1.4) (2026-11-19)
 
 
